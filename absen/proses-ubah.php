@@ -6,13 +6,18 @@ require_once "../config/database.php";
 if (isset($_POST['simpan'])) {
 	if (isset($_POST['idabsen'])) {
 		$idabsen    = mysqli_real_escape_string($db, trim($_POST['idabsen']));
-		$alfa		= $_POST['alfa'];
-		$tazir      = $_POST['tazir'];
+		$s		= $_POST['s'];
+		$d		= $_POST['d'];
+		$a		= $_POST['a'];
+		$m		= $_POST['m'];
+		$i		= $_POST['i'];
+		$hadir	= $s + $d + $a + $m + $i;
+		$izin	= $_POST['izin'];
+		$alfa	= 5 - ($hadir + $izin);
+		$tazir  = $_POST['tazir'];
 
 		// perintah query untuk mengubah data pada tabel is_siswa
-		$query = mysqli_query($db, "UPDATE absen SET alfa 			= '$alfa',
-														tazir 	= '$tazir'
-												  WHERE idabsen 			= '$idabsen'");
+		$query = mysqli_query($db, "UPDATE absen SET s = '$s', d = '$d', a = '$a', m = '$m', i = '$i', hadir = '$hadir', izin = '$izin', alfa = '$alfa', tazir = '$tazir' WHERE idabsen = '$idabsen'");
 
 		// cek query
 		if ($query) {

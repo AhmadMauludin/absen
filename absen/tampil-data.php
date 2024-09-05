@@ -69,11 +69,18 @@ if (isset($_POST['cari'])) {
           <table class="table table-striped table-hover">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Hari, Tanggal</th>
-                <th>Nama</th>
-                <th>Alfa</th>
-                <th>Tazir</th>
+                <th class='center'>No.</th>
+                <th class='center'>Hari, Tanggal</th>
+                <th class='center'>Nama</th>
+                <th class='center'>Shubuh</th>
+                <th class='center'>Dzuhur</th>
+                <th class='center'>Ashar</th>
+                <th class='center'>Maghrib</th>
+                <th class='center'>Isya</th>
+                <th class='center'>Hadir</th>
+                <th class='center'>Izin</th>
+                <th class='center'>Alfa</th>
+                <th class='center'>Tazir</th>
                 <th class='center'>Aksi</th>
               </tr>
             </thead>
@@ -84,7 +91,7 @@ if (isset($_POST['cari'])) {
               $batas = 10;
 
               if (isset($cari)) {
-                $jumlah_record = mysqli_query($db, "SELECT absen.idabsen, absen.id, absen.alfa, absen.tazir, santri.nis, santri.nama, tanggal.hari, tanggal.tanggal FROM absen JOIN santri ON santri.nis = absen.nis JOIN tanggal ON tanggal.id = absen.id WHERE nama LIKE '%$cari%' OR tanggal LIKE '%$cari%'")
+                $jumlah_record = mysqli_query($db, "SELECT absen.idabsen, absen.id, absen.alfa, absen.tazir, santri.nis, santri.nama, tanggal.hari, tanggal.tanggal FROM absen JOIN santri ON santri.nis = absen.nis JOIN tanggal ON tanggal.id = absen.id WHERE nama LIKE '%$cari%' OR tazir LIKE '%$cari%' OR tanggal LIKE '%$cari%'")
                   or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
               } else {
                 $jumlah_record = mysqli_query($db, "SELECT absen.idabsen, absen.id, absen.alfa, absen.tazir, santri.nis, santri.nama, tanggal.hari, tanggal.tanggal FROM absen JOIN santri ON santri.nis = absen.nis JOIN tanggal ON tanggal.id = absen.id")
@@ -98,25 +105,30 @@ if (isset($_POST['cari'])) {
               /*-------------------------------------------------------------------*/
               $no = 1;
               if (isset($cari)) {
-                $query = mysqli_query($db, "SELECT absen.idabsen, absen.id, absen.alfa, absen.tazir, santri.nis, santri.nama, tanggal.hari, tanggal.tanggal FROM absen JOIN santri ON santri.nis = absen.nis JOIN tanggal ON tanggal.id = absen.id
-                                            WHERE nama LIKE '%$cari%' OR tanggal LIKE '%$cari%' 
+                $query = mysqli_query($db, "SELECT absen.*, santri.nis, santri.nama, tanggal.hari, tanggal.tanggal FROM absen JOIN santri ON santri.nis = absen.nis JOIN tanggal ON tanggal.id = absen.id
+                                            WHERE nama LIKE '%$cari%' OR tazir LIKE '%$cari%' OR tanggal LIKE '%$cari%' 
                                             ORDER BY tanggal DESC LIMIT $mulai, $batas")
                   or die('Ada kesalahan pada query absen: ' . mysqli_error($db));
               } else {
-                $query = mysqli_query($db, "SELECT absen.idabsen, absen.id, absen.alfa, absen.tazir, santri.nis, santri.nama , tanggal.hari, tanggal.tanggal FROM absen JOIN santri ON santri.nis = absen.nis JOIN tanggal ON tanggal.id = absen.id
+                $query = mysqli_query($db, "SELECT absen.*, santri.nis, santri.nama , tanggal.hari, tanggal.tanggal FROM absen JOIN santri ON santri.nis = absen.nis JOIN tanggal ON tanggal.id = absen.id
                                             ORDER BY tanggal DESC LIMIT $mulai, $batas")
                   or die('Ada kesalahan pada query absen: ' . mysqli_error($db));
               }
 
               while ($data = mysqli_fetch_assoc($query)) {
-
                 echo "  <tr>
-                      <td width='20' >$no</td>
-                      <td width='200'>$data[hari], $data[tanggal]</td>
-                      <td width='200'>$data[nama]</td>
-                      <td width='100'>$data[alfa]</td>
-                      <td width='100'>$data[tazir]</td>
-
+                      <td width='20' class='center'>$no</td>
+                      <td width='100'>$data[hari], $data[tanggal]</td>
+                      <td width='150'>$data[nama]</td>
+                      <td width='50' class='center'>$data[s]</td>
+                      <td width='50' class='center'>$data[d]</td>
+                      <td width='50' class='center'>$data[a]</td>
+                      <td width='50' class='center'>$data[m]</td>
+                      <td width='50' class='center'>$data[i]</td>
+                      <td width='50' class='center'>$data[hadir]</td>
+                      <td width='50' class='center'>$data[izin]</td>
+                      <td width='50' class='center'>$data[alfa]</td>
+                      <td width='75' class='center'>$data[tazir]</td>
                       <td width='100' class='center'>
                         <div class=''>
                         <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=ubah&id=$data[idabsen]'>

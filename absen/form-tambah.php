@@ -65,17 +65,66 @@ $today =  date("Y-m-d")
               </div>
             </div>
 
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Shubuh</label>
+              <div class="col-sm-1">
+                <select class="form-control" name="s" placeholder="Pilih" required>
+                  <option value="1">Hadir</option>
+                  <option value="0">Tidak</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Dzuhur</label>
+              <div class="col-sm-1">
+                <select class="form-control" name="d" placeholder="Pilih" required>
+                  <option value="1">Hadir</option>
+                  <option value="0">Tidak</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Ashar</label>
+              <div class="col-sm-1">
+                <select class="form-control" name="a" placeholder="Pilih" required>
+                  <option value="1">Hadir</option>
+                  <option value="0">Tidak</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Maghrib</label>
+              <div class="col-sm-1">
+                <select class="form-control" name="m" placeholder="Pilih" required>
+                  <option value="1">Hadir</option>
+                  <option value="0">Tidak</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Isya</label>
+              <div class="col-sm-1">
+                <select class="form-control" name="i" placeholder="Pilih" required>
+                  <option value="1">Hadir</option>
+                  <option value="0">Tidak</option>
+                </select>
+              </div>
+            </div>
 
             <div class=" form-group">
-              <label class="col-sm-2 control-label">Alfa</label>
-              <div class="col-sm-3">
-                <input type="number" class="form-control" name="alfa" autocomplete="off" required>
+              <label class="col-sm-2 control-label">Izin</label>
+              <div class="col-sm-1">
+                <input type="number" class="form-control" name="izin" autocomplete="off" required>
               </div>
             </div>
 
             <div class="form-group">
               <label class="col-sm-2 control-label">Tazir</label>
-              <div class="col-sm-3">
+              <div class="col-sm-1">
                 <select class="form-control" name="tazir" placeholder="Pilih" required>
                   <option value="Belum">Belum</option>
                   <option value="Sudah">Sudah</option>
