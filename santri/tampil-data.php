@@ -81,7 +81,7 @@ if (isset($_POST['cari'])) {
             <tbody>
               <?php
               /* Pagination */
-              $batas = 5;
+              $batas = 15;
 
               if (isset($cari)) {
                 $jumlah_record = mysqli_query($db, "SELECT * FROM santri

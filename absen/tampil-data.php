@@ -14,6 +14,8 @@ if (isset($_POST['cari'])) {
       </button>
       <a class="btn btn-outline-success" href="?page=tambah"><i class="glyphicon glyphicon-plus"></i>
       </a>
+      <a class="btn btn-outline-success" href="?page=form"><i class="glyphicon glyphicon-file"></i>
+      </a>
 
       <div class="pull-right btn-tambah">
         <form class="form-inline" method="POST" action="index.php">
@@ -88,7 +90,7 @@ if (isset($_POST['cari'])) {
             <tbody>
               <?php
               /* Pagination */
-              $batas = 10;
+              $batas = 25;
 
               if (isset($cari)) {
                 $jumlah_record = mysqli_query($db, "SELECT absen.idabsen, absen.id, absen.alfa, absen.tazir, santri.nis, santri.nama, tanggal.hari, tanggal.tanggal FROM absen JOIN santri ON santri.nis = absen.nis JOIN tanggal ON tanggal.id = absen.id WHERE nama LIKE '%$cari%' OR tazir LIKE '%$cari%' OR tanggal LIKE '%$cari%'")

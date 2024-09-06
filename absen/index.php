@@ -115,6 +115,8 @@ require_once "../config/database.php";
       include "form-ubah.php";
     } elseif ($_GET['page'] == 'detail') {
       include "detail.php";
+    } elseif ($_GET['page'] == 'form') {
+      include "form.php";
     }
     ?>
   </div> <!-- /.container-fluid -->
