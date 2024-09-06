@@ -3,7 +3,7 @@
     <div class="page-header">
       <h4>
         <i class="glyphicon glyphicon-edit"></i>
-        Input Halangan
+        Input Perizinan
       </h4>
     </div> <!-- /.page-header -->
 
@@ -29,7 +29,7 @@
       <div class="panel-body">
         <form class="form-horizontal" method="POST" action="proses-simpan.php">
 
-          <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
+          <input type="hidden" name="iduser" value="<?php echo $_SESSION['iduser']; ?>">
 
           <div class="form-group">
             <label class="col-sm-2 control-label">Nama Santri</label>

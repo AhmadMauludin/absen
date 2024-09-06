@@ -78,7 +78,7 @@ require_once "config/database.php";
     <div class="container-fluid">
       <!-- Brand -->
 
-      <button type="button" class="btn btn-warning"><b>SMARTREN</b></button></a>
+      <button type="button" class="btn btn-warning"><b>ST</b></button></a>
 
       <a href="index.php"> <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-home"></i></button></a>
 
@@ -88,17 +88,21 @@ require_once "config/database.php";
 
       <a href="absen/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-list-alt"></i></button></a>
 
-      <a href="hsp/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-remove-circle"></i></button></a>
+      <a href="hsp/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-hourglass"></i></button></a>
 
       <!-- Split button -->
       <div class="btn-group">
         <button type="button" class="btn btn-default">
-          <b><?php echo $_SESSION['username']; ?> </b> <?php echo $_SESSION['level']; ?></button>
+          <b><?php echo $_SESSION['level']; ?> </b></button>
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="caret"></span>
         </button>
+
         <ul class="dropdown-menu">
+          <li><a href="?page=profile">Profile</a></li>
           <li><a href="logout.php">Logout</a></li>
+          <li><a href="backup.php">Backup DB</a></li>
+
         </ul>
       </div>
 
@@ -114,12 +118,8 @@ require_once "config/database.php";
     <?php
     if (empty($_GET["page"])) {
       include "dashboard.php";
-    } elseif ($_GET['page'] == 'tambah') {
-      include "form-tambah.php";
-    } elseif ($_GET['page'] == 'ubah') {
-      include "form-ubah.php";
-    } elseif ($_GET['page'] == 'detail') {
-      include "detail.php";
+    } elseif ($_GET['page'] == 'profile') {
+      include "profile/profile.php";
     }
     ?>
   </div> <!-- /.container-fluid -->

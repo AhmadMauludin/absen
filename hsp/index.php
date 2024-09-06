@@ -92,7 +92,7 @@ require_once "../config/database.php";
       <!-- Split button -->
       <div class="btn-group">
         <button type="button" class="btn btn-default">
-          <b><?php echo $_SESSION['username']; ?> </b> <?php echo $_SESSION['level']; ?></button>
+          <b><?php echo $_SESSION['iduser']; ?> </b> <?php echo $_SESSION['level']; ?></button>
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="caret"></span>
         </button>

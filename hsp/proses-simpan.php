@@ -23,7 +23,7 @@ if (isset($_POST['simpan'])) {
 	$nis       	= $_POST['nis'];
 	$jenis      = $_POST['jenis'];
 	$ket       	= mysqli_real_escape_string($db, trim($_POST['ket']));
-	$username   = mysqli_real_escape_string($db, trim($_POST['username']));
+	$iduser   = mysqli_real_escape_string($db, trim($_POST['iduser']));
 	$stat       = $_POST['stat'];
 	$lapor      = $_POST['lapor'];
 
@@ -33,7 +33,7 @@ if (isset($_POST['simpan'])) {
 													 ket,
 													 tgm,
 													 wtm,
-													 username,
+													 iduser,
 													 stat,
 													 tgs,
 													 wts,
@@ -45,7 +45,7 @@ if (isset($_POST['simpan'])) {
 													 '$ket',
 													 '$tgm',
 													 '$wtm',
-													 '$username',
+													 '$iduser',
 													 '$stat',
 													 '$tgs',
 													 '$wts',												'$lapor',

@@ -1,96 +1,432 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Waktu pembuatan: 01 Sep 2024 pada 13.07
--- Versi server: 8.0.27
--- Versi PHP: 7.4.26
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- Database Backup --
+-- Ver. : 1.0.1
+-- Host : 127.0.0.1
+-- Generating Time : Sep 06, 2024 at 20:52:46:PM
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `absen`
---
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `absen`
---
-
-DROP TABLE IF EXISTS `absen`;
-CREATE TABLE IF NOT EXISTS `absen` (
-  `idabsen` int NOT NULL AUTO_INCREMENT,
-  `id` int NOT NULL,
-  `nis` int NOT NULL,
-  `alfa` int NOT NULL,
+CREATE TABLE `absen` (
+  `idabsen` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
+  `nis` int(11) NOT NULL,
+  `s` int(5) NOT NULL,
+  `d` int(5) NOT NULL,
+  `a` int(5) NOT NULL,
+  `m` int(5) NOT NULL,
+  `i` int(5) NOT NULL,
+  `hadir` int(5) NOT NULL,
+  `izin` int(5) NOT NULL,
+  `alfa` int(11) NOT NULL,
+  `tazir` varchar(11) NOT NULL,
   PRIMARY KEY (`idabsen`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=20240905124408 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+INSERT INTO absen VALUES
+("20240905122201","20240905","122201","1","1","1","1","1","5","0","0","Belum"),
+("20240905122202","20240905","122202","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122203","20240905","122203","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122204","20240905","122204","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122205","20240905","122205","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122206","20240905","122206","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122207","20240905","122207","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122208","20240905","122208","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122209","20240905","122209","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122210","20240905","122210","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122211","20240905","122211","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122212","20240905","122212","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122213","20240905","122213","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122214","20240905","122214","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122215","20240905","122215","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122216","20240905","122216","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122217","20240905","122217","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122218","20240905","122218","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122219","20240905","122219","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122220","20240905","122220","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122221","20240905","122221","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122222","20240905","122222","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122223","20240905","122223","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122224","20240905","122224","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122225","20240905","122225","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122226","20240905","122226","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122227","20240905","122227","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122228","20240905","122228","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122229","20240905","122229","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122230","20240905","122230","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122231","20240905","122231","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122232","20240905","122232","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122233","20240905","122233","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122234","20240905","122234","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122235","20240905","122235","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122236","20240905","122236","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122237","20240905","122237","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122238","20240905","122238","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122239","20240905","122239","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122240","20240905","122240","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122241","20240905","122241","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122242","20240905","122242","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122243","20240905","122243","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122244","20240905","122244","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122245","20240905","122245","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122246","20240905","122246","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122247","20240905","122247","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122248","20240905","122248","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122249","20240905","122249","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122501","20240905","122501","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122502","20240905","122502","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122503","20240905","122503","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122504","20240905","122504","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122505","20240905","122505","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122506","20240905","122506","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122507","20240905","122507","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122508","20240905","122508","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122509","20240905","122509","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122510","20240905","122510","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122511","20240905","122511","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122512","20240905","122512","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122513","20240905","122513","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122514","20240905","122514","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122515","20240905","122515","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123101","20240905","123101","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123102","20240905","123102","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123103","20240905","123103","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123104","20240905","123104","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123105","20240905","123105","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123106","20240905","123106","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123107","20240905","123107","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123108","20240905","123108","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123109","20240905","123109","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123110","20240905","123110","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123111","20240905","123111","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123112","20240905","123112","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123113","20240905","123113","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123114","20240905","123114","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123116","20240905","123116","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123117","20240905","123117","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123118","20240905","123118","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123119","20240905","123119","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123120","20240905","123120","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123121","20240905","123121","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123122","20240905","123122","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123123","20240905","123123","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123124","20240905","123124","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123125","20240905","123125","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123126","20240905","123126","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123127","20240905","123127","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123129","20240905","123129","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123130","20240905","123130","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123132","20240905","123132","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123133","20240905","123133","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123134","20240905","123134","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123135","20240905","123135","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123136","20240905","123136","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123137","20240905","123137","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123138","20240905","123138","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123139","20240905","123139","1","1","1","1","1","5","0","0","Tidak");
+INSERT INTO absen VALUES
+("20240905123140","20240905","123140","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123141","20240905","123141","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123142","20240905","123142","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123143","20240905","123143","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123144","20240905","123144","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123145","20240905","123145","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123146","20240905","123146","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123147","20240905","123147","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123148","20240905","123148","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123149","20240905","123149","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123401","20240905","123401","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123402","20240905","123402","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123404","20240905","123404","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123405","20240905","123405","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123406","20240905","123406","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123407","20240905","123407","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123408","20240905","123408","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123409","20240905","123409","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123410","20240905","123410","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123411","20240905","123411","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123412","20240905","123412","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123413","20240905","123413","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123414","20240905","123414","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123415","20240905","123415","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123416","20240905","123416","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123417","20240905","123417","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124108","20240905","124108","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124109","20240905","124109","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124110","20240905","124110","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124111","20240905","124111","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124112","20240905","124112","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124113","20240905","124113","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124115","20240905","124115","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124116","20240905","124116","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124117","20240905","124117","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124118","20240905","124118","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124119","20240905","124119","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124120","20240905","124120","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124121","20240905","124121","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124122","20240905","124122","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124123","20240905","124123","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124124","20240905","124124","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124125","20240905","124125","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124126","20240905","124126","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124127","20240905","124127","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124128","20240905","124128","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124129","20240905","124129","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124130","20240905","124130","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124131","20240905","124131","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124132","20240905","124132","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124133","20240905","124133","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124134","20240905","124134","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124135","20240905","124135","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124138","20240905","124138","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124139","20240905","124139","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124140","20240905","124140","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124141","20240905","124141","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124142","20240905","124142","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124401","20240905","124401","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124402","20240905","124402","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124403","20240905","124403","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124404","20240905","124404","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124405","20240905","124405","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124406","20240905","124406","1","1","1","1","1","5","0","0","Tidak"),
+("20240905124407","20240905","124407","1","1","1","1","1","5","0","0","Tidak");
 
---
--- Struktur dari tabel `santri`
---
+CREATE TABLE `hsp` (
+  `idhsp` int(10) NOT NULL AUTO_INCREMENT,
+  `nis` int(10) NOT NULL,
+  `jenis` varchar(20) NOT NULL,
+  `ket` text NOT NULL,
+  `tgm` date NOT NULL,
+  `wtm` time NOT NULL,
+  `iduser` int(11) NOT NULL,
+  `stat` varchar(20) NOT NULL,
+  `tgs` date NOT NULL,
+  `wts` time NOT NULL,
+  `lapor` varchar(20) NOT NULL,
+  `tgl` date NOT NULL,
+  `wtl` time NOT NULL,
+  PRIMARY KEY (`idhsp`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-DROP TABLE IF EXISTS `santri`;
-CREATE TABLE IF NOT EXISTS `santri` (
-  `nis` varchar(5) NOT NULL,
-  `nama` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `username` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+INSERT INTO hsp VALUES
+("2","45234","Pulang","Acara Keluarga","2024-09-04","02:28:00","1","Belum Selesai","2024-09-05","02:28:00","Belum Lapor","0000-00-00","00:00:00"),
+("3","12345","Haid","pms","2024-09-04","02:33:00","1","Belum Selesai","2024-09-07","02:33:00","Belum Lapor","0000-00-00","00:00:00"),
+("4","122238","Sakit","Mag","2024-09-06","15:56:00","1","Belum Selesai","2024-09-06","15:56:00","Belum Lapor","0000-00-00","00:00:00");
+
+CREATE TABLE `santri` (
+  `nis` varchar(10) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `username` varchar(30) NOT NULL,
   `password` varchar(8) NOT NULL,
   `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
-  `kelas` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `kelas` varchar(20) NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `no_telepon` varchar(12) NOT NULL,
+  `no_telepon` varchar(15) NOT NULL,
+  `asrama` varchar(30) NOT NULL,
+  `kelsek` varchar(11) NOT NULL,
+  `foto` text NOT NULL,
   PRIMARY KEY (`nis`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data untuk tabel `santri`
---
+INSERT INTO santri VALUES
+("122201","Abdul Dava Maulana","AbdulDavaMaulana","122201","Laki-laki","1","Sumedang","6285175017991","Utman","7B","abduldava.png"),
+("122202","Adly Firman Efendi","AdlyFirmanEfendi","122202","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122203","Adrian Muhammad Azhar","AdrianMuhammadAzhar","122203","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122204","Agus Ramdani Alfariji","AgusRamdaniAlfariji","122204","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122205","Aldian Ahmad","AldianAhmad","122205","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122206","Alif Ahmad Hidayat","AlifAhmadHidayat","122206","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122207","Arvin Galen Pratama","ArvinGalenPratama","122207","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122208","Damar Harpa Komara","DamarHarpaKomara","122208","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122209","Dandhi Surya Maulana","DandhiSuryaMaulana","122209","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122210","Fadhil Fazliansyah Irawan","FadhilFazliansyahIrawan","122210","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122211","Faiz Lathif Sundara","FaizLathifSundara","122211","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122212","Fakhri Farzal Rafif","FakhriFarzalRafif","122212","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122213","Fakhri Nur Mubarak","FakhriNurMubarak","122213","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122214","Girelbi Ilmanaufal Ramadhan","GirelbiIlmanaufalRamadhan","122214","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122215","Hadi Luqmanul Hakim","HadiLuqmanulHakim","122215","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122216","Ikhwan Nudin Ismail","IkhwanNudinIsmail","122216","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122217","Indra Lesmana Permana","IndraLesmanaPermana","122217","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122218","Iwan Sopandi","IwanSopandi","122218","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122219","Jajang Kurniawan","JajangKurniawan","122219","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122220","Kosasih","Kosasih","122220","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122221","M. Fikri","M.Fikri","122221","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122222","Margana Rizki Andriana","MarganaRizkiAndriana","122222","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122223","Muhammad Aryya Saifullah","MuhammadAryyaSaifullah","122223","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122224","Muhammad Fahmi Tammami","MuhammadFahmiTammami","122224","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122225","Muhammad Naufal Kholil","MuhammadNaufalKholil","122225","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122226","Muhammad Nur Azmi","MuhammadNurAzmi","122226","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122227","Muhammad Taufi Qurrohman","MuhammadTaufiQurrohman","122227","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122228","Muhhamad Daffa Setyaputra","MuhhamadDaffaSetyaputra","122228","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122229","Nazryl Leza Rizalul Mutaqin","NazrylLezaRizalulMutaqin","122229","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122230","Nikky Wildan Rehandi","NikkyWildanRehandi","122230","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122231","Racka Syahputra Wagiu","RackaSyahputraWagiu","122231","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122232","Rafael Daud Firmansyah","RafaelDaudFirmansyah","122232","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122233","Rahmat Hidayat","RahmatHidayat","122233","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122234","Reihan Iqbal Prasetio","ReihanIqbalPrasetio","122234","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122235","Revan Ikhsan Kharisna","RevanIkhsanKharisna","122235","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122236","Rezky Firaihan","RezkyFiraihan","122236","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122237","Rido Akbar Novani","RidoAkbarNovani","122237","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122238","Ridzly","Ridzly","122238","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122239","Rifan Alipermana","RifanAlipermana","122239","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122240","Ripan Nurjaman","RipanNurjaman","122240","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122241","Rizki Chandra Putra Pratama","RizkiChandraPutraPratama","122241","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122242","Rizky Akmal Agustian","RizkyAkmalAgustian","122242","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122243","Rizqi Rizkulah","RizqiRizkulah","122243","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122244","Roni Haetami","RoniHaetami","122244","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122245","Yoga Ramadhan","YogaRamadhan","122245","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122246","Yudi Hidayat","YudiHidayat","122246","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122247","Zahwan Abdul Aziz","ZahwanAbdulAziz","122247","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122248","Zehan Althaf Falaah","ZehanAlthafFalaah","122248","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122249","Zidan Hadi Albanie","ZidanHadiAlbanie","122249","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122501","Andi Nugraha","AndiNugraha","122501","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122502","Ardhika Nesa Adi Pratama","ArdhikaNesaAdiPratama","122502","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122503","Fauzi Ahmad Yasseer","FauziAhmadYasseer","122503","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122504","Firman Ramadhan","FirmanRamadhan","122504","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122505","Jeri Jaenudin Majid","JeriJaenudinMajid","122505","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122506","Mochammad Rifki Fadillah","MochammadRifkiFadillah","122506","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122507","Muhamad Alamsyah","MuhamadAlamsyah","122507","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122508","Muhammad Anwar Sanusi","MuhammadAnwarSanusi","122508","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122509","Muhammad Ridho Alfarizi","MuhammadRidhoAlfarizi","122509","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122510","Muhammad Ridwan","MuhammadRidwan","122510","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122511","Qomarul Zaman","QomarulZaman","122511","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122512","Fahry Zainuddin","FahryZainuddin","122512","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122513","Muhamad Agra Rizkia Mulyana","MuhamadAgraRizkiaMulyana","122513","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122514","Muhammad Iqbal Maulana","MuhammadIqbalMaulana","122514","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122515","Muhammad Najib Husaini Faturrohman","MuhammadNajibHusainiFaturrohma","122515","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123101","Abdul Hadi","AbdulHadi","123101","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123102","Abdul Ihsan Sadiqin","AbdulIhsanSadiqin","123102","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123103","Abian Aeruliansyah","AbianAeruliansyah","123103","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123104","Agus Suhendar","AgusSuhendar","123104","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123105","Ahmad Rizki Mubarok","AhmadRizkiMubarok","123105","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123106","Ardhiansah","Ardhiansah","123106","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123107","Arief Hidayat","AriefHidayat","123107","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123108","Arviarfan Rabbani","ArviarfanRabbani","123108","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123109","Arya Aidil Nugraha","AryaAidilNugraha","123109","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123110","Azzam Althaaf Dzaki","AzzamAlthaafDzaki","123110","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123111","Eki Ramdani","EkiRamdani","123111","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123112","Evan Maulidin","EvanMaulidin","123112","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123113","Fadli Nur Fadillah","FadliNurFadillah","123113","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123114","Fajar Hanafi","FajarHanafi","123114","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123116","Gauza Dafa Alfaiz","GauzaDafaAlfaiz","123116","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123117","Hamdan Hilmawan","HamdanHilmawan","123117","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123118","Jajang Jaenudin","JajangJaenudin","123118","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123119","Jajang Putra Permana","JajangPutraPermana","123119","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123120","Luthfi Adriansyah","LuthfiAdriansyah","123120","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123121","Muhamad Shidqi Zaidan Khoirusabri","MuhamadShidqiZaidanKhoirusabri","123121","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123122","Mochamad Ilyas Nurfalah","MochamadIlyasNurfalah","123122","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123123","Muhamad Azzam Ramadhan","MuhamadAzzamRamadhan","123123","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123124","Muhamad Galang Hendrayana","MuhamadGalangHendrayana","123124","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123125","Muhamad Rizki Dwi Aditya","MuhamadRizkiDwiAditya","123125","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123126","Muhamad Samsul Maarif","MuhamadSamsulMaarif","123126","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123127","Muhammad Aditya Ramli","MuhammadAdityaRamli","123127","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123129","Muhammad Ikhwan Fauzan","MuhammadIkhwanFauzan","123129","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123130","Muhammad Ilham Firdaus","MuhammadIlhamFirdaus","123130","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123132","Muhammad Rauf Rizqullah","MuhammadRaufRizqullah","123132","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123133","Muhammad Reza Nugraha","MuhammadRezaNugraha","123133","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123134","Muhammad Risal Al Hafiizh","MuhammadRisalAlHafiizh","123134","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123135","Muhammad Syafiq Abdillah","MuhammadSyafiqAbdillah","123135","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123136","Muhammad Zen Hadiputra","MuhammadZenHadiputra","123136","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123137","Nasir Ilham Ramdani","NasirIlhamRamdani","123137","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123138","Oki Murhakim","OkiMurhakim","123138","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123139","Rafi Yazid Zidan","RafiYazidZidan","123139","Laki-laki","1","Sumedang","6285175017991","","","");
+INSERT INTO santri VALUES
+("123140","Rafki Muhammad Ripasan","RafkiMuhammadRipasan","123140","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123141","Reffa Jaelani","ReffaJaelani","123141","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123142","Reza As Suhendar","RezaAsSuhendar","123142","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123143","Ribat Dudiara Satya","RibatDudiaraSatya","123143","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123144","Rido Ahmad Solihin","RidoAhmadSolihin","123144","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123145","Ridwan Arsyil Maulana","RidwanArsyilMaulana","123145","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123146","Rizky Sahal Mahpud","RizkySahalMahpud","123146","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123147","Syairazy Miftahul Arifin Ratnadi","SyairazyMiftahulArifinRatnadi","123147","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123148","Wildan Irawan","WildanIrawan","123148","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123149","Zam Zam Bani Khairi","ZamZamBaniKhairi","123149","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123401","Agni Abdul Aziz","AgniAbdulAziz","123401","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123402","Dadan Ramdani","DadanRamdani","123402","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123404","Muhamad Roby Rahmawan","MuhamadRobyRahmawan","123404","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123405","Muhammad Kholil Ash Shidiq","MuhammadKholilAshShidiq","123405","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123406","Rasya Auliandri Syaputra","RasyaAuliandriSyaputra","123406","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123407","Rijal Ahmad Tantowi","RijalAhmadTantowi","123407","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123408","Didit Fathul Mubin","DiditFathulMubin","123408","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123409","Fadhlurrohman Azhar","FadhlurrohmanAzhar","123409","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123410","Fahmi Raafiulhaqq","FahmiRaafiulhaqq","123410","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123411","Fariq Irsyad","FariqIrsyad","123411","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123412","Fauzan Hafidz Sundara","FauzanHafidzSundara","123412","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123413","Panji Purnama","PanjiPurnama","123413","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123414","Rendi Nurcahyadin","RendiNurcahyadin","123414","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123415","Rezza Asrafal Huda","RezzaAsrafalHuda","123415","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123416","Rian Nugraha","RianNugraha","123416","Laki-laki","1","Sumedang","6285175017991","","",""),
+("123417","Rizqi Muhamad Fahri","RizqiMuhamadFahri","123417","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124108","Abdurohman","Abdurohman","124108","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124109","Ahmad Bakri","AhmadBakri","124109","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124110","Aldi Hendra Saputra Sonjaya","AldiHendraSaputraSonjaya","124110","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124111","Andri Pirmansyah","AndriPirmansyah","124111","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124112","Anjar Nur Alam","AnjarNurAlam","124112","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124113","Azam Nur Alamsyah","AzamNurAlamsyah","124113","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124115","Derry Ahmad Al Jabar","DerryAhmadAlJabar","124115","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124116","Dimas Nurdiansah","DimasNurdiansah","124116","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124117","Erik Permana","ErikPermana","124117","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124118","Fathan Rizqillah","FathanRizqillah","124118","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124119","Hasbi Abdul Ghopur","HasbiAbdulGhopur","124119","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124120","Ilham Akbar Ramdani","IlhamAkbarRamdani","124120","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124121","Ilham Maulana","IlhamMaulana","124121","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124122","Imam Dwi Karman","ImamDwiKarman","124122","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124123","Indra Herdiansyah","IndraHerdiansyah","124123","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124124","Maulana Landif Aritmatika        ","MaulanaLandifAritmatika","124124","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124125","Muhamad Fauzan Alfariji","MuhamadFauzanAlfariji","124125","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124126","Muhamad Rizky Ramadani","MuhamadRizkyRamadani","124126","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124127","Muhammad Akmal Ramadhan","MuhammadAkmalRamadhan","124127","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124128","Muhammad Arif Fadliansyah","MuhammadArifFadliansyah","124128","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124129","Muhammad Fachri","MuhammadFachri","124129","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124130","Muhammad Hadiningrat Hidayat","MuhammadHadiningratHidayat","124130","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124131","Muhammad Hisyam Zaedan Ibrahim","MuhammadHisyamZaedanIbrahim","124131","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124132","Muhammad Husni Abdul Rouf","MuhammadHusniAbdulRouf","124132","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124133","Muhammad Iqbal Maulana Yusuf","MuhammadIqbalMaulanaYusuf","124133","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124134","Muhammad Muzakki Rivana","MuhammadMuzakkiRivana","124134","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124135","Muhammad Nizam Al Musyfiq","MuhammadNizamAlMusyfiq","124135","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124138","Rakha Janvier Rijalluda","RakhaJanvierRijalluda","124138","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124139","Reva Triana","RevaTriana","124139","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124140","Rizky Muhamad Furqon","RizkyMuhamadFurqon","124140","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124141","Zaenal Muthaqin","ZaenalMuthaqin","124141","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124142","Zain Ahmad Shah Arridho","ZainAhmadShahArridho","124142","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124401","Farrel Imadudin Al Ashari","FarrelImadudinAlAshari","124401","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124402","Gumerlar Ramadhan Nugraha","GumerlarRamadhanNugraha","124402","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124403","Lupi Maulana","LupiMaulana","124403","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124404","Muhammad Abdul Kholiq","MuhammadAbdulKholiq","124404","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124405","Muhammad Adzka Satria Pratama","MuhammadAdzkaSatriaPratama","124405","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124406","Nandra Rizky Al Pauzan","NandraRizkyAlPauzan","124406","Laki-laki","1","Sumedang","6285175017991","","",""),
+("124407","Zahran Fauzan Zamzami","ZahranFauzanZamzami","124407","Laki-laki","1","Sumedang","6285175017991","","","");
 
-INSERT INTO `santri` (`nis`, `nama`, `username`, `password`, `jenis_kelamin`, `kelas`, `alamat`, `no_telepon`) VALUES
-('16001', 'Danang Kusuma', 'Bandar Lampung', '1990-02-', 'Laki-laki', 'Islam', 'Jalan Gatot Subroto No. 10, Bandar Lampung', '085758857775'),
-('16002', 'Isyana Sarasvati', 'Jakarta', '1993-05-', 'Perempuan', 'Islam', 'Jalan Pagar Alam No. 15, Kedaton, Bandar Lampung', '085789892909'),
-('16003', 'Indra Styawantoro', 'Purbolinggo', '1991-05-', 'Laki-laki', 'Islam', 'Perum Griya Gedung Meneng Blok C2 No. 2, Rajabasa, Bandar Lampung', '085669919769'),
-('16004', 'Maudy Ayunda', 'Jakarta', '1994-12-', 'Perempuan', 'Islam', 'Jalan Radin Intan No. 77, Tanjung Karang, Bandar Lampung', '089977955772'),
-('16005', 'Valentino Rossi', 'Metro', '1979-03-', 'Laki-laki', 'Islam', 'Jalan Zaenal Abidin Pagaralam No. 1, Bandar Lampung', '081922919212'),
-('16006', 'Raisa Andriana', 'Jakarta', '1990-06-', 'Perempuan', 'Islam', 'Jalan Yos Sudarso No. 135, Bandar Lampung', '081388955767'),
-('16007', 'sdfsdfsdfsdfsdfsdfsdfsdf', 'sdfsdsdfsdfsfsfdfsdf', 'sdfsdfsd', 'Laki-laki', '2D', 'Jalan Teuku Umar No. 52, Kedaton Bandar Lampung', '081269962201');
+CREATE TABLE `staf` (
+  `nis` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(50) NOT NULL,
+  `telp` varchar(15) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `jabatan` varchar(20) NOT NULL,
+  `foto` text NOT NULL,
+  PRIMARY KEY (`nis`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+INSERT INTO staf VALUES
+("1","Ahmad Mauludin","6289502918001","ahmadmaldin1799@gmail.com","sekretaris","ahmad.jpeg");
 
---
--- Struktur dari tabel `tanggal`
---
-
-DROP TABLE IF EXISTS `tanggal`;
-CREATE TABLE IF NOT EXISTS `tanggal` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tanggal` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tanggal` date NOT NULL,
   `hari` varchar(10) NOT NULL,
   `ket` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=20240906 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data untuk tabel `tanggal`
---
+INSERT INTO tanggal VALUES
+("20240905","2024-09-05","Kamis","coba");
 
-INSERT INTO `tanggal` (`id`, `tanggal`, `hari`, `ket`) VALUES
-(1, '2024-09-01', 'Ahad', 'iinininini');
-COMMIT;
+CREATE TABLE `user` (
+  `iduser` int(10) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  `level` varchar(30) NOT NULL,
+  `nis` int(11) NOT NULL,
+  PRIMARY KEY (`iduser`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO user VALUES
+("1","maldin","maldin","admin","1"),
+("2","ahmad","ahmad","pengurus","2");

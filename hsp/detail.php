@@ -20,7 +20,7 @@
                 $ket            = $data['ket'];
                 $tgm            = $data['tgm'];
                 $wtm            = $data['wtm'];
-                $username       = $data['username'];
+                $iduser       = $data['iduser'];
                 $stat           = $data['stat'];
                 $tgs            = $data['tgs'];
                 $wts            = $data['wts'];
@@ -40,7 +40,7 @@
             <li class="list-group-item">Kelas : <?php echo $kelas; ?></li>
             <li class="list-group-item">Jenis : <?php echo $jenis; ?></li>
             <li class="list-group-item">Keterangan : <?php echo $ket; ?>
-            <li class="list-group-item">Pemberi Izin : <?php echo $username; ?>
+            <li class="list-group-item">Pemberi Izin : <?php echo $iduser; ?>
             <li class="list-group-item">Tanggal Mulai : <?php echo $tgm; ?>
             <li class="list-group-item">Waktu Mulai : <?php echo $wtm; ?>
             <li class="list-group-item">Status : <?php echo $stat; ?>

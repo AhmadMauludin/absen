@@ -85,10 +85,10 @@ if (isset($_POST['cari'])) {
               $batas = 5;
 
               if (isset($cari)) {
-                $jumlah_record = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.username, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis WHERE nama LIKE '%$cari%' OR tgm LIKE '%$cari%'")
+                $jumlah_record = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.iduser, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis WHERE nama LIKE '%$cari%' OR tgm LIKE '%$cari%'")
                   or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
               } else {
-                $jumlah_record = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.username, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis")
+                $jumlah_record = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.iduser, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis")
                   or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
               }
 
@@ -99,10 +99,10 @@ if (isset($_POST['cari'])) {
               /*-------------------------------------------------------------------*/
               $no = 1;
               if (isset($cari)) {
-                $query = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.username, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis WHERE nama LIKE '%$cari%' OR tgm LIKE '%$cari%' ORDER BY tgm DESC LIMIT $mulai, $batas")
+                $query = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.iduser, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis WHERE nama LIKE '%$cari%' OR tgm LIKE '%$cari%' ORDER BY tgm DESC LIMIT $mulai, $batas")
                   or die('Ada kesalahan pada query tanggal: ' . mysqli_error($db));
               } else {
-                $query = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.username, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis ORDER BY tgm DESC LIMIT $mulai, $batas")
+                $query = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.iduser, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis ORDER BY tgm DESC LIMIT $mulai, $batas")
                   or die('Ada kesalahan pada query tanggal: ' . mysqli_error($db));
               }
 

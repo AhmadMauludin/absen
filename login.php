@@ -10,7 +10,7 @@
     <?php
     if (isset($_GET['pesan'])) {
         if ($_GET['pesan'] == "gagal") {
-            echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
+            echo "<div class='alert'>Id User dan Password tidak sesuai !</div>";
         } else if ($_GET['pesan'] == "logindulu") {
             echo "<div class='alert'>Silahkan Login dulu !</div>";
         }
@@ -22,8 +22,8 @@
         <hr>
 
         <form action="cek_login.php" method="post">
-            <P><label>Username</label></P>
-            <input type="text" name="username" class="form_login" placeholder="Username" required="required">
+            <P><label>Id</label></P>
+            <input type="text" name="iduser" class="form_login" placeholder="id user" required="required">
             <label>Password</label>
             <p><input type="password" name="password" class="form_login" placeholder="Password" required="required"></p>
 
