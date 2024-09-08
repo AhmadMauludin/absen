@@ -61,6 +61,19 @@ require_once "../config/database.php";
       return false;
     }
   </script>
+  <style>
+    @media print {
+
+      .btn-outline-success,
+      .form-group,
+      .kirim,
+      .kembali,
+      .pull-right,
+      .aksi {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -77,7 +90,7 @@ require_once "../config/database.php";
     <div class="container-fluid">
       <!-- Brand -->
 
-      <button type="button" class="btn btn-warning"><b>SMARTREN</b></button></a>
+      <button type="button" class="btn btn-warning"><b>ST</b></button></a>
 
       <a href="../index.php"> <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-home"></i></button></a>
 
@@ -87,20 +100,23 @@ require_once "../config/database.php";
 
       <a href="../absen/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-list-alt"></i></button></a>
 
-      <a href="../hsp/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-remove-circle"></i></button></a>
+      <a href="../hsp/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-hourglass"></i></button></a>
 
       <!-- Split button -->
       <div class="btn-group">
         <button type="button" class="btn btn-default">
-          <b><?php echo $_SESSION['iduser']; ?> </b> <?php echo $_SESSION['level']; ?></button>
+          <b><?php echo $_SESSION['level']; ?> </b></button>
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="caret"></span>
         </button>
+
         <ul class="dropdown-menu">
+          <li><a href="../?page=profile">Profile - <?php echo $_SESSION['iduser']; ?></a></li>
           <li><a href="../logout.php">Logout</a></li>
+          <li><a href="../backup.php">Backup DB</a></li>
+
         </ul>
       </div>
-
     </div> <!-- /.container-fluid -->
   </nav>
 
@@ -125,8 +141,7 @@ require_once "../config/database.php";
 
   <footer class="footer">
     <div class="container-fluid">
-      <p class="text-muted pull-left">Smartren</p>
-      <p class="text-muted pull-right ">Theme by <a href="http://www.getbootstrap.com" target="_blank">Bootstrap</a></p>
+      <p class="text-muted center"><b>Smartren</b> by Maldin</p>
     </div>
   </footer>
 

@@ -9,7 +9,7 @@ require_once "../config/database.php";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Data Taanggal Absen</title>
+  <title>Data Tanggal Absen</title>
 
   <!-- favicon -->
   <link rel="shortcut icon" href="../assets/img/favicon.png">
@@ -61,6 +61,15 @@ require_once "../config/database.php";
       return false;
     }
   </script>
+  <style>
+    @media print {
+
+      .form-group,
+      .kirim {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -77,7 +86,7 @@ require_once "../config/database.php";
     <div class="container-fluid">
       <!-- Brand -->
 
-      <button type="button" class="btn btn-warning"><b>SMARTREN</b></button></a>
+      <button type="button" class="btn btn-warning"><b>ST</b></button></a>
 
       <a href="../index.php"> <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-home"></i></button></a>
 
@@ -87,20 +96,23 @@ require_once "../config/database.php";
 
       <a href="../absen/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-list-alt"></i></button></a>
 
-      <a href="../hsp/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-remove-circle"></i></button></a>
+      <a href="../hsp/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-hourglass"></i></button></a>
 
       <!-- Split button -->
       <div class="btn-group">
         <button type="button" class="btn btn-default">
-          <b><?php echo $_SESSION['iduser']; ?> </b> <?php echo $_SESSION['level']; ?></button>
+          <b><?php echo $_SESSION['level']; ?> </b></button>
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="caret"></span>
         </button>
+
         <ul class="dropdown-menu">
+          <li><a href="../?page=profile">Profile - <?php echo $_SESSION['iduser']; ?></a></li>
           <li><a href="../logout.php">Logout</a></li>
+          <li><a href="../backup.php">Backup DB</a></li>
+
         </ul>
       </div>
-
     </div> <!-- /.container-fluid -->
   </nav>
 
@@ -123,8 +135,7 @@ require_once "../config/database.php";
 
   <footer class="footer">
     <div class="container-fluid">
-      <p class="text-muted pull-left">Aplikasi Data Siswa</p>
-      <p class="text-muted pull-right ">Theme by <a href="http://www.getbootstrap.com" target="_blank">Bootstrap</a></p>
+      <p class="text-muted center"><b>Smartren</b> by Maldin</p>
     </div>
   </footer>
 

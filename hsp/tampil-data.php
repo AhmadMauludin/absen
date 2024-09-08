@@ -75,7 +75,9 @@ if (isset($_POST['cari'])) {
                 <th>Nama Santri</th>
                 <th>Perizinan</th>
                 <th>Status</th>
-                <th class='center'>Aksi</th>
+                <th class='aksi'>
+                  <center>Aksi</center>
+                </th>
               </tr>
             </thead>
 
@@ -99,11 +101,9 @@ if (isset($_POST['cari'])) {
               /*-------------------------------------------------------------------*/
               $no = 1;
               if (isset($cari)) {
-                $query = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.iduser, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis WHERE nama LIKE '%$cari%' OR tgm LIKE '%$cari%' ORDER BY tgm DESC LIMIT $mulai, $batas")
-                  or die('Ada kesalahan pada query tanggal: ' . mysqli_error($db));
+                $query = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.iduser, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis WHERE nama LIKE '%$cari%' OR tgm LIKE '%$cari%' ORDER BY tgm DESC LIMIT $mulai, $batas") or die('Ada kesalahan pada query tanggal: ' . mysqli_error($db));
               } else {
-                $query = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.iduser, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis ORDER BY tgm DESC LIMIT $mulai, $batas")
-                  or die('Ada kesalahan pada query tanggal: ' . mysqli_error($db));
+                $query = mysqli_query($db, "SELECT hsp.idhsp, hsp.nis, hsp.jenis, hsp.stat, santri.nis, santri.nama, hsp.iduser, hsp.tgm, hsp.wtm FROM hsp JOIN santri ON santri.nis = hsp.nis ORDER BY tgm DESC LIMIT $mulai, $batas") or die('Ada kesalahan pada query tanggal: ' . mysqli_error($db));
               }
 
               while ($data = mysqli_fetch_assoc($query)) {
@@ -113,31 +113,21 @@ if (isset($_POST['cari'])) {
                       <td width='75'>$data[tgm]</td>
                       <td width='50'>$data[wtm]</td>
                       <td width='150'>$data[nama]</td>
-                      <td width='150'>$data[jenis]</td>
-                      <td width='150'>$data[stat]</td>
-                      <td width='100' class='center'>
-                        <div class=''>
+                      <td width='100'>$data[jenis]</td>
+                      <td width='100'>$data[stat]</td>
+                      <td width='100' class='aksi'>
+                        <div class='aksi'>
 
-                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail&idhsp=$data[idhsp]'>
-                            <i class='glyphicon glyphicon-eye-open'></i>
-                          </a>  
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail&idhsp=$data[idhsp]'> <i class='glyphicon glyphicon-eye-open'></i></a>  
 
-
-
-                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='../absen/form-tambah&idhsp=$data[idhsp]'>
-                            <i class='glyphicon glyphicon-ok'></i>
-                          </a>
+                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='../absen/form-tambah&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-ok'></i></a>
                           
-                         <a data-toggle='tooltip' data-placement='top' title='Kirim' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=kirim&idhsp=$data[idhsp]'>
-                            <i class='glyphicon glyphicon-share'></i>
-                          </a>  
+                         <a data-toggle='tooltip' data-placement='top' title='Kirim' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=kirim&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-share'></i></a>  
 
-                          ";
+                          "; ?>
 
-              ?>
-                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="proses-hapus.php?idhsp=<?php echo $data['idhsp']; ?>" onclick="return confirm('Anda yakin ingin menghapus perizinan <?php echo $data['nama']; ?>?');">
-                  <i class="glyphicon glyphicon-trash"></i>
-                </a>
+                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="proses-hapus.php?idhsp=<?php echo $data['idhsp']; ?>" onclick="return confirm('Anda yakin ingin menghapus perizinan <?php echo $data['nama']; ?>?');"> <i class="glyphicon glyphicon-trash"></i></a>
+
               <?php
                 echo "
                         </div>
@@ -162,7 +152,7 @@ if (isset($_POST['cari'])) {
           </a>
 
           <nav>
-            <ul class="pagination pull-right">
+            <ul class="pagination pull-right" class="kirim">
               <!-- Button untuk halaman sebelumnya -->
               <?php
               if ($halaman_aktif <= '1') { ?>
@@ -185,7 +175,7 @@ if (isset($_POST['cari'])) {
               <!-- Link halaman 1 2 3 ... -->
               <?php
               for ($x = 1; $x <= $halaman; $x++) { ?>
-                <li class="">
+                <li class="kirim">
                   <a href="?hal=<?php echo $x ?>"><?php echo $x ?></a>
                 </li>
               <?php

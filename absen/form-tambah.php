@@ -128,6 +128,7 @@ $today =  date("Y-m-d")
                 <select class="form-control" name="tazir" placeholder="Pilih" required>
                   <option value="Belum">Belum</option>
                   <option value="Sudah">Sudah</option>
+                  <option value="Tidak">Tidak</option>
                 </select>
               </div>
             </div>

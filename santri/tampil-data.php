@@ -20,6 +20,7 @@ if (isset($_POST['cari'])) {
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon">
+
                 <i class="glyphicon glyphicon-search"></i>
               </div>
               <input type="text" class="form-control" name="cari" placeholder="Masukan nama" autocomplete="off" value="<?php echo $cari; ?>">
@@ -72,8 +73,9 @@ if (isset($_POST['cari'])) {
                 <th>No.</th>
                 <th>NIS</th>
                 <th>Nama</th>
-                <th>Kelas</th>
                 <th>JK</th>
+                <th>Kelas</th>
+                <th>Asrama</th>
                 <th class='center'>Aksi</th>
               </tr>
             </thead>
@@ -81,7 +83,7 @@ if (isset($_POST['cari'])) {
             <tbody>
               <?php
               /* Pagination */
-              $batas = 15;
+              $batas = 25;
 
               if (isset($cari)) {
                 $jumlah_record = mysqli_query($db, "SELECT * FROM santri
@@ -115,16 +117,16 @@ if (isset($_POST['cari'])) {
                       <td width='20' >$no</td>
                       <td width='50'>$data[nis]</td>
                       <td width='200'>$data[nama]</td>
-                      <td width='100'>$data[kelas]</td>
-                      <td width='150'>$data[jenis_kelamin]</td>
+                      <td width='75'>$data[jenis_kelamin]</td>
+                      <td width='50'>$data[kelas] / $data[kelsek]</td>
+                      <td width='75'>$data[asrama]</td>
                       <td width='100' class='center'>
                         <div class=''>
-                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail&id=$data[nis]'>
-                            <i class='glyphicon glyphicon-eye-open'></i>
-                          </a>  
-                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=ubah&id=$data[nis]'>
-                            <i class='glyphicon glyphicon-edit'></i>
-                          </a>";
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail&id=$data[nis]'> <i class='glyphicon glyphicon-eye-open'></i> </a>
+
+                        <a data-toggle='tooltip' data-placement='top' title='Detail absen' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=detailabsen&id=$data[nis]'><i class='glyphicon glyphicon-list-alt'></i> </a>
+
+                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=ubah&id=$data[nis]'><i class='glyphicon glyphicon-edit'></i> </a>";
               ?>
                 <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="proses-hapus.php?id=<?php echo $data['nis']; ?>" onclick="return confirm('Anda yakin ingin menghapus siswa <?php echo $data['nama']; ?>?');">
                   <i class="glyphicon glyphicon-trash"></i>

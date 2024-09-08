@@ -177,6 +177,7 @@
                   <option value="<?php echo $tazir; ?>"><?php echo $tazir; ?></option>
                   <option value="Belum">Belum</option>
                   <option value="Sudah">Sudah</option>
+                  <option value="Tidak">Tidak</option>
                 </select>
               </div>
             </div>

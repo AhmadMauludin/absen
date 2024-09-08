@@ -99,7 +99,7 @@ require_once "config/database.php";
         </button>
 
         <ul class="dropdown-menu">
-          <li><a href="?page=profile">Profile</a></li>
+          <li><a href="?page=profile">Profile - <?php echo $_SESSION['iduser']; ?></a></li>
           <li><a href="logout.php">Logout</a></li>
           <li><a href="backup.php">Backup DB</a></li>
 
@@ -126,8 +126,7 @@ require_once "config/database.php";
 
   <footer class="footer">
     <div class="container-fluid">
-      <p class="text-muted pull-left">Absen</p>
-      <p class="text-muted pull-right ">Theme by <a href="http://www.getbootstrap.com" target="_blank">Bootstrap</a></p>
+      <p class="text-muted center"><b>Smartren</b> by Maldin</p>
     </div>
   </footer>
 

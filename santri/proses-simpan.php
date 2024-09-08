@@ -5,30 +5,33 @@ require_once "../config/database.php";
 if (isset($_POST['simpan'])) {
 	$nis           = mysqli_real_escape_string($db, trim($_POST['nis']));
 	$nama          = mysqli_real_escape_string($db, trim($_POST['nama']));
-	$username		= mysqli_real_escape_string($db, trim($_POST['username']));
-	$password		= mysqli_real_escape_string($db, trim($_POST['password']));
 	$jenis_kelamin = $_POST['jenis_kelamin'];
+	$kelsek         = $_POST['kelsek'];
 	$kelas         = $_POST['kelas'];
+	$asrama         = $_POST['asrama'];
 	$alamat        = mysqli_real_escape_string($db, trim($_POST['alamat']));
 	$no_telepon    = $_POST['no_telepon'];
+	$foto        = mysqli_real_escape_string($db, trim($_POST['foto']));
 
 	// perintah query untuk menyimpan data ke tabel is_siswa
 	$query = mysqli_query($db, "INSERT INTO santri(nis,
 													 nama,
-													 username,
-													 password,
 													 jenis_kelamin,
 													 kelas,
 													 alamat,
-													 no_telepon)	
+													 no_telepon,
+													 asrama,
+													 kelsek,
+													 foto)	
 											  VALUES('$nis',
 													 '$nama',
-													 '$username',
-													 '$password',
 													 '$jenis_kelamin',
 													 '$kelas',
 													 '$alamat',
-													 '$no_telepon')");
+													 '$no_telepon',
+													 '$asrama',
+													 '$kelsek',
+													 '$foto')");
 
 	// cek hasil query
 	if ($query) {

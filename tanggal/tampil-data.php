@@ -10,14 +10,14 @@ if (isset($_POST['cari'])) {
   <div class="col-md-12">
     <div class="page-header">
 
-      <button type="button" class="btn btn-outline-primary"><b>Tanggal</b>
+      <button type="button" class="btn btn-outline-primary"><b>Data Tanggal Absen </b>
       </button>
-      <a class="btn btn-outline-success" href="?page=tambah"><i class="glyphicon glyphicon-plus"></i>
+      <a class="btn btn-outline-success kirim" href="?page=tambah"><i class="glyphicon glyphicon-plus"></i>
       </a>
 
       <div class="pull-right btn-tambah">
         <form class="form-inline" method="POST" action="index.php">
-          <div class="form-group">
+          <div class="form-group kirim">
             <div class="input-group">
               <div class="input-group-addon">
                 <i class="glyphicon glyphicon-search"></i>
@@ -71,7 +71,12 @@ if (isset($_POST['cari'])) {
               <tr>
                 <th>No.</th>
                 <th>Hari, Tanggal</th>
-                <th class='center'>Aksi</th>
+                <th class='center'>Shubuh</th>
+                <th class='center'>Dzuhur</th>
+                <th class='center'>Ashar</th>
+                <th class='center'>Maghrib</th>
+                <th class='center'>Isya</th>
+                <th class='center kirim'>Aksi</th>
               </tr>
             </thead>
 
@@ -93,6 +98,10 @@ if (isset($_POST['cari'])) {
               $halaman = ceil($jumlah / $batas);
               $page    = (isset($_GET['hal'])) ? (int)$_GET['hal'] : 1;
               $mulai   = ($page - 1) * $batas;
+
+
+
+
               /*-------------------------------------------------------------------*/
               $no = 1;
               if (isset($cari)) {
@@ -107,11 +116,31 @@ if (isset($_POST['cari'])) {
               }
 
               while ($data = mysqli_fetch_assoc($query)) {
+                $js = mysqli_query($db, "SELECT * FROM absen WHERE s='1' AND id= $data[id] ");
+                $jums  = mysqli_num_rows($js);
+
+                $jd = mysqli_query($db, "SELECT * FROM absen WHERE d='1' AND id= $data[id] ");
+                $jumd  = mysqli_num_rows($jd);
+
+                $ja = mysqli_query($db, "SELECT * FROM absen WHERE a='1' AND id= $data[id] ");
+                $juma  = mysqli_num_rows($ja);
+
+                $jm = mysqli_query($db, "SELECT * FROM absen WHERE m='1' AND id= $data[id] ");
+                $jumm  = mysqli_num_rows($jm);
+
+                $ji = mysqli_query($db, "SELECT * FROM absen WHERE i='1' AND id= $data[id] ");
+                $jumi  = mysqli_num_rows($ji);
 
                 echo "  <tr>
-                      <td width='20' >$no</td>
-                      <td width='150'>$data[hari], $data[tanggal]</td>
-                      <td width='100' class='center'>
+                      <td width='10' >$no</td>
+                      <td width='75'>$data[hari], $data[tanggal]</td>
+                      <td width='15' class='center'>$jums </td>
+                      <td width='15' class='center'>$jumd </td>
+                      <td width='15' class='center'>$juma </td>
+                      <td width='15' class='center'>$jumm </td>
+                      <td width='15' class='center'>$jumi </td>
+
+                      <td width='50' class='center kirim'>
                         <div class=''>
                         <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail&id=$data[id]'>
                             <i class='glyphicon glyphicon-eye-open'></i>
@@ -141,13 +170,13 @@ if (isset($_POST['cari'])) {
           }
           ?>
 
-          <a>
+          <a class="kirim">
             Halaman <?php echo $halaman_aktif; ?> dari <?php echo $halaman; ?> |
             Total <?php echo $jumlah; ?> data
           </a>
 
           <nav>
-            <ul class="pagination pull-right">
+            <ul class="pagination pull-right kirim">
               <!-- Button untuk halaman sebelumnya -->
               <?php
               if ($halaman_aktif <= '1') { ?>
@@ -200,5 +229,6 @@ if (isset($_POST['cari'])) {
         </div>
       </div>
     </div> <!-- /.panel -->
+
   </div> <!-- /.col -->
 </div> <!-- /.row -->
