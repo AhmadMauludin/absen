@@ -11,14 +11,14 @@ if (isset($_POST['cari'])) {
     <div class="page-header">
 
       <div>
-        <form class="form-inline" method="POST" action="index.php">
+        <form class="form-inline" method="POST" action="?page=tampil-data-santri">
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon">
                 <b>Data Santri</b>
               </div>
               <div class="input-group-addon">
-                <a href="?page=tambah"><i class="glyphicon glyphicon-plus"></i></a>
+                <a href="?page=tambah-santri"><i class="glyphicon glyphicon-plus"></i></a>
               </div>
 
               <input type="text" class="form-control" name="cari" placeholder="Masukan nama" autocomplete="off" value="<?php echo $cari; ?>">
@@ -84,11 +84,10 @@ if (isset($_POST['cari'])) {
             <tbody>
               <?php
               /* Pagination */
-              $batas = 25;
+              $batas = 1000;
 
               if (isset($cari)) {
-                $jumlah_record = mysqli_query($db, "SELECT * FROM santri
-                                                    WHERE nis LIKE '%$cari%' OR nama LIKE '%$cari%'")
+                $jumlah_record = mysqli_query($db, "SELECT * FROM santri WHERE nis LIKE '%$cari%' OR nama LIKE '%$cari%'")
                   or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
               } else {
                 $jumlah_record = mysqli_query($db, "SELECT * FROM santri")
@@ -123,13 +122,13 @@ if (isset($_POST['cari'])) {
                       <td width='75'>$data[asrama]</td>
                       <td width='100' class='center'>
                         <div class=''>
-                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail&id=$data[nis]'> <i class='glyphicon glyphicon-eye-open'></i> </a>
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail-santri&id=$data[nis]'> <i class='glyphicon glyphicon-eye-open'></i> </a>
 
-                        <a data-toggle='tooltip' data-placement='top' title='Detail absen' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=detailabsen&id=$data[nis]'><i class='glyphicon glyphicon-list-alt'></i> </a>
+                        <a data-toggle='tooltip' data-placement='top' title='Detail absen' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=detail-absen-santri&id=$data[nis]'><i class='glyphicon glyphicon-list-alt'></i> </a>
 
-                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=ubah&id=$data[nis]'><i class='glyphicon glyphicon-edit'></i> </a>";
+                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=ubah-santri&id=$data[nis]'><i class='glyphicon glyphicon-edit'></i> </a>";
               ?>
-                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="proses-hapus.php?id=<?php echo $data['nis']; ?>" onclick="return confirm('Anda yakin ingin menghapus siswa <?php echo $data['nama']; ?>?');">
+                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="?page=hapus-santri&id=<?php echo $data['nis']; ?>" onclick="return confirm('Anda yakin ingin menghapus siswa <?php echo $data['nama']; ?>?');">
                   <i class="glyphicon glyphicon-trash"></i>
                 </a>
               <?php

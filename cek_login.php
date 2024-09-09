@@ -43,7 +43,7 @@ if ($cek > 0) {
         $_SESSION['iduser'] = $iduser;
         $_SESSION['level'] = "santri";
         // alihkan ke halaman dashboard pengurus
-        header("location:index_santri.php");
+        header("location:index.php");
     } else {
 
         // alihkan ke halaman login kembali

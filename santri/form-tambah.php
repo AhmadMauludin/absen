@@ -9,7 +9,7 @@
 
       <div class="panel panel-default">
         <div class="panel-body">
-          <form class="form-horizontal" method="POST" action="proses-simpan.php">
+          <form class="form-horizontal" method="POST" action="?page=simpan-santri">
             <div class="form-group">
               <label class="col-sm-2 control-label">NIS</label>
               <div class="col-sm-2">
@@ -151,7 +151,7 @@
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                 <input type="submit" class="btn btn-info btn-submit" name="simpan" value="Simpan">
-                <a href="index.php" class="btn btn-default btn-reset">Batal</a>
+                <a href="?page=tampil-data-santri" class="btn btn-default btn-reset">Batal</a>
               </div>
             </div>
           </form>

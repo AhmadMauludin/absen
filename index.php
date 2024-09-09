@@ -61,6 +61,21 @@ require_once "config/database.php";
       return false;
     }
   </script>
+
+  <style>
+    @media print {
+
+      .btn-outline-success,
+      .form-group,
+      .kirim,
+      .kembali,
+      .pull-right,
+      .aksi {
+        display: none;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -75,54 +90,35 @@ require_once "config/database.php";
   ?>
 
   <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <!-- Brand -->
-
-      <img alt="Brand" src="assets/img/favicon.png" height="42" width="auto">
-
-      <a href="index.php"> <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-home"></i></button></a>
-
-      <a href="santri/index.php"> <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-user"></i></button></a>
-
-      <a href="tanggal/index.php"> <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-calendar"></i></button></a>
-
-      <a href="absen/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-list-alt"></i></button></a>
-
-      <a href="hsp/index.php" <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-hourglass"></i></button></a>
-
-      <!-- Split button -->
-      <div class="btn-group">
-        <button type="button" class="btn btn-default">
-          <b><?php echo $_SESSION['level']; ?> </b></button>
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="caret"></span>
-        </button>
-
-        <ul class="dropdown-menu">
-          <li><a href="?page=profile">Profile - <?php echo $_SESSION['iduser']; ?></a></li>
-          <li><a href="logout.php">Logout</a></li>
-          <li><a href="backup.php">Backup DB</a></li>
-
-        </ul>
-      </div>
-
-
-    </div> <!-- /.container-fluid -->
-
-
-
+    <?php
+    if ($_SESSION['level'] == "admin") {
+      include 'menu/menu-admin.php';
+    } else if ($_SESSION['level'] == "pengurus") {
+      include 'menu/menu-pengurus.php';
+    } else if ($_SESSION['level'] == "santri") {
+      include 'menu/menu-santri.php';
+    } else if ($_SESSION['level'] == "orangtua") {
+      include 'menu/menu-orangtua.php';
+    }
+    ?>
   </nav>
 
 
-  <div class="container-fluid">
+  <div class="container-fluid"> <!-- Route -->
+
     <?php
-    if (empty($_GET["page"])) {
-      include "dashboard.php";
-    } elseif ($_GET['page'] == 'profile') {
-      include "profile/profile.php";
+    if ($_SESSION['level'] == "admin") {
+      include 'routes/routeadmin.php';
+    } else if ($_SESSION['level'] == "pengurus") {
+      include 'routes/routepengurus.php';
+    } else if ($_SESSION['level'] == "santri") {
+      include 'routes/routesantri.php';
+    } else if ($_SESSION['level'] == "orangtua") {
+      include 'routes/routesantri.php';
     }
     ?>
-  </div> <!-- /.container-fluid -->
+
+  </div> <!-- Route -->
 
   <footer class="footer">
     <div class="container-fluid">

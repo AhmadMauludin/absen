@@ -57,7 +57,7 @@
                       <td width='25' class='center'>$data[izin]</td>
                       <td width='25' class='center'>$data[alfa]</td>
                       <td width='50' class='center'>$data[tazir]</td>
-                      <td width='50' class='kirim'><a data-toggle='tooltip' data-placement='top' title='Kirim' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=kirim&idabsen=$data[idabsen]'><i class='glyphicon glyphicon-share'></i></a></td>
+                      <td width='50' class='kirim'><a data-toggle='tooltip' data-placement='top' title='Kirim' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=kirim-absen-santri&idabsen=$data[idabsen]'><i class='glyphicon glyphicon-share'></i></a></td>
                     </tr>";
                                 $no++;
                             }
@@ -67,7 +67,7 @@
         </ul>
 
         <div class="form-group">
-            <a href="index.php" class="btn btn-default btn-reset">Kembali</a>
+            <a href="?page=tampil-data-santri" class="btn btn-default btn-reset">Kembali</a>
         </div>
     </div>
     </form>

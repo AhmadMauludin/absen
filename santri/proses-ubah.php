@@ -1,7 +1,7 @@
 
 <?php
 // Panggil koneksi database
-require_once "../config/database.php";
+require_once "config/database.php";
 
 if (isset($_POST['simpan'])) {
 	if (isset($_POST['nis'])) {
@@ -29,10 +29,10 @@ if (isset($_POST['simpan'])) {
 		// cek query
 		if ($query) {
 			// jika berhasil tampilkan pesan berhasil update data
-			header('location: index.php?alert=3');
+			header('location: ?page=tampil-data-santri&alert=3');
 		} else {
 			// jika gagal tampilkan pesan kesalahan
-			header('location: index.php?alert=1');
+			header('location: ?page=tampil-data-santri&alert=1');
 		}
 	}
 }
