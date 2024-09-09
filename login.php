@@ -18,14 +18,15 @@
     ?>
 
     <div class="kotak_login">
-        <p class="tulisan_login"> <B>L O G I N</B></p>
+        <center><img src="assets/img/favicon.png"></center>
+        <p class="tulisan_login"> WELCOME TO <B>SMARTREN</B></p>
         <hr>
 
         <form action="cek_login.php" method="post">
-            <P><label>Id</label></P>
-            <input type="text" name="iduser" class="form_login" placeholder="id user" required="required">
+            <P><label>Id user</label></P>
+            <input type="text" name="iduser" class="form_login" placeholder="Masukan id user" required="required">
             <label>Password</label>
-            <p><input type="password" name="password" class="form_login" placeholder="Password" required="required"></p>
+            <p><input type="password" name="password" class="form_login" placeholder="Masukkan Password" required="required"></p>
 
             <p><input type="submit" class="tombol_login" value="M A S U K"></p>
         </form>

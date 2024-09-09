@@ -9,7 +9,7 @@ require_once "../config/database.php";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Data HSP</title>
+  <title>Smartren | HSP</title>
 
   <!-- favicon -->
   <link rel="shortcut icon" href="../assets/img/favicon.png">
@@ -90,7 +90,7 @@ require_once "../config/database.php";
     <div class="container-fluid">
       <!-- Brand -->
 
-      <button type="button" class="btn btn-warning"><b>ST</b></button></a>
+      <img alt="Brand" src="../assets/img/favicon.png" height="42" width="auto">
 
       <a href="../index.php"> <button type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-home"></i></button></a>
 

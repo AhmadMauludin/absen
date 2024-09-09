@@ -9,22 +9,23 @@ if (isset($_POST['cari'])) {
 <div class="row">
   <div class="col-md-12">
     <div class="page-header">
-
-      <button type="button" class="btn btn-outline-primary"><b>Absensi</b>
-      </button>
-      <a class="btn btn-outline-success" href="?page=tambah"><i class="glyphicon glyphicon-plus"></i>
-      </a>
-      <a class="btn btn-outline-success" href="?page=form"><i class="glyphicon glyphicon-file"></i>
-      </a>
-
-      <div class="pull-right btn-tambah">
+      <div>
         <form class="form-inline" method="POST" action="index.php">
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon">
+                <b>Absensi</b>
+              </div>
+              <div class="input-group-addon">
+                <a href="?page=tambah"><i class="glyphicon glyphicon-plus"></i></a>
+              </div>
+              <div class="input-group-addon">
+                <a href="?page=form"><i class="glyphicon glyphicon-cloud-upload"></i></a>
+              </div>
+              <input type="text" class="form-control" name="cari" placeholder="Nama/tanggal" autocomplete="off" value="<?php echo $cari; ?>">
+              <div class="input-group-addon">
                 <i class="glyphicon glyphicon-search"></i>
               </div>
-              <input type="text" class="form-control" name="cari" placeholder="nama/tanggal" autocomplete="off" value="<?php echo $cari; ?>">
             </div>
           </div>
         </form>

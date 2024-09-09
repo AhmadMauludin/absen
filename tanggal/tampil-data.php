@@ -9,20 +9,21 @@ if (isset($_POST['cari'])) {
 <div class="row">
   <div class="col-md-12">
     <div class="page-header">
-
-      <button type="button" class="btn btn-outline-primary"><b>Data Tanggal Absen </b>
-      </button>
-      <a class="btn btn-outline-success kirim" href="?page=tambah"><i class="glyphicon glyphicon-plus"></i>
-      </a>
-
-      <div class="pull-right btn-tambah">
+      <div>
         <form class="form-inline" method="POST" action="index.php">
-          <div class="form-group kirim">
+          <div class="form-group">
             <div class="input-group">
+              <div class="input-group-addon">
+                <b>Tanggal Absen</b>
+              </div>
+              <div class="input-group-addon">
+                <a href="?page=tambah"><i class="glyphicon glyphicon-plus"></i></a>
+              </div>
+
+              <input type="text" class="form-control" name="cari" placeholder="Masukan tanggal" autocomplete="off" value="<?php echo $cari; ?>">
               <div class="input-group-addon">
                 <i class="glyphicon glyphicon-search"></i>
               </div>
-              <input type="text" class="form-control" name="cari" placeholder="Masukan Tanggal" autocomplete="off" value="<?php echo $cari; ?>">
             </div>
           </div>
         </form>
