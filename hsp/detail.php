@@ -53,8 +53,8 @@
         </ul>
 
         <div class="form-group">
-            <a href="index.php" class="btn btn-default btn-reset kirim">Kembali</a>
-            <a href='?page=kirim&idhsp=$data[idhsp]' class=" btn btn-default btn-reset"><i class="glyphicon glyphicon-share"></i> Kirim</a>
+            <a href="?page=tampil-data-hsp" class="btn btn-default btn-reset kirim">Kembali</a>
+            <a href='?page=kirim-hsp&idhsp=$data[idhsp]' class=" btn btn-default btn-reset"><i class="glyphicon glyphicon-share"></i> Kirim</a>
         </div>
     </div>
     </form>

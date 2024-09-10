@@ -23,7 +23,7 @@ if (isset($_POST['simpan'])) {
 	$nis       	= $_POST['nis'];
 	$jenis      = $_POST['jenis'];
 	$ket       	= mysqli_real_escape_string($db, trim($_POST['ket']));
-	$iduser   = mysqli_real_escape_string($db, trim($_POST['iduser']));
+	$iduser     = mysqli_real_escape_string($db, trim($_POST['iduser']));
 	$stat       = $_POST['stat'];
 	$lapor      = $_POST['lapor'];
 

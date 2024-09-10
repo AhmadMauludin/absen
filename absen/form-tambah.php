@@ -19,7 +19,7 @@ $today =  date("Y-m-d")
 
 
 
-        <form class="form-horizontal" method="POST" action="proses-simpan.php">
+        <form class="form-horizontal" method="POST" action="?page=simpan-absen">
 
           <div class="form-group">
 
@@ -137,7 +137,7 @@ $today =  date("Y-m-d")
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                 <input type="submit" class="btn btn-info btn-submit" name="simpan" value="Simpan">
-                <a href="index.php" class="btn btn-default btn-reset">Batal</a>
+                <a href="?page=tampil-data-absen" class="btn btn-default btn-reset">Batal</a>
               </div>
             </div>
         </form>

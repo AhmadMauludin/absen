@@ -10,17 +10,17 @@ if (isset($_POST['cari'])) {
   <div class="col-md-12">
     <div class="page-header">
       <div>
-        <form class="form-inline" method="POST" action="index.php">
+        <form class="form-inline" method="POST" action="?page=tampil-data-absen">
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon">
                 <b>Absensi</b>
               </div>
               <div class="input-group-addon">
-                <a href="?page=tambah"><i class="glyphicon glyphicon-plus"></i></a>
+                <a href="?page=tambah-absen"><i class="glyphicon glyphicon-plus"></i></a>
               </div>
               <div class="input-group-addon">
-                <a href="?page=form"><i class="glyphicon glyphicon-cloud-upload"></i></a>
+                <a href="absen/form.php"><i class="glyphicon glyphicon-cloud-upload"></i></a>
               </div>
               <input type="text" class="form-control" name="cari" placeholder="Nama/tanggal" autocomplete="off" value="<?php echo $cari; ?>">
               <div class="input-group-addon">
@@ -134,11 +134,11 @@ if (isset($_POST['cari'])) {
                       <td width='75' class='center'>$data[tazir]</td>
                       <td width='100' class='center'>
                         <div class=''>
-                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=ubah&id=$data[idabsen]'>
+                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=ubah-absen&id=$data[idabsen]'>
                             <i class='glyphicon glyphicon-edit'></i>
                           </a>";
               ?>
-                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="proses-hapus.php?id=<?php echo $data['idabsen']; ?>" onclick="return confirm('Anda yakin ingin menghapus absen ini?');">
+                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="?page=hapus-absen&id=<?php echo $data['idabsen']; ?>" onclick="return confirm('Anda yakin ingin menghapus absen ini?');">
                   <i class="glyphicon glyphicon-trash"></i>
                 </a>
               <?php

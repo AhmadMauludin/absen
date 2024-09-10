@@ -7,24 +7,6 @@
       </h4>
     </div> <!-- /.page-header -->
 
-    <!-- 
-      idhsp
-      nis
-      jenis
-      ket
-      tgm
-      wtm
-      idstaf
-      status
-      tgs
-      wts
-      lapor
-      tgl
-      wtl
-      -->
-
-
-
     <div class="panel panel-default">
       <div class="panel-body">
         <form class="form-horizontal" method="POST" action="proses-simpan.php">
@@ -172,7 +154,7 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <input type="submit" class="btn btn-info btn-submit" name="simpan" value="Simpan">
-              <a href="index.php" class="btn btn-default btn-reset">Batal</a>
+              <a href=" ?page=tampil-data-hsp" class="btn btn-default btn-reset">Batal</a>
             </div>
           </div>
         </form>

@@ -10,14 +10,14 @@ if (isset($_POST['cari'])) {
   <div class="col-md-12">
     <div class="page-header">
       <div>
-        <form class="form-inline" method="POST" action="index.php">
+        <form class="form-inline" method="POST" action="?page=tampil-data-tanggal">
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon">
                 <b>Tanggal Absen</b>
               </div>
               <div class="input-group-addon">
-                <a href="?page=tambah"><i class="glyphicon glyphicon-plus"></i></a>
+                <a href="?page=tambah-tanggal"><i class="glyphicon glyphicon-plus"></i></a>
               </div>
 
               <input type="text" class="form-control" name="cari" placeholder="Masukan tanggal" autocomplete="off" value="<?php echo $cari; ?>">
@@ -141,16 +141,16 @@ if (isset($_POST['cari'])) {
                       <td width='15' class='center'>$jumm </td>
                       <td width='15' class='center'>$jumi </td>
 
-                      <td width='50' class='center kirim'>
+                      <td width='75' class='center kirim'>
                         <div class=''>
-                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail&id=$data[id]'>
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail-tanggal&id=$data[id]'>
                             <i class='glyphicon glyphicon-eye-open'></i>
                           </a>  
                         <a data-toggle='tooltip' data-placement='top' title='Input' style='margin-right:5px' class='btn btn-info btn-sm' href='../absen/form-tambah&id=$data[id]'>
                             <i class='glyphicon glyphicon-edit'></i>
                           </a>";
               ?>
-                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="proses-hapus.php?id=<?php echo $data['id']; ?>" onclick="return confirm('Anda yakin ingin menghapus tanggal <?php echo $data['tanggal']; ?>?');">
+                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="?page=hapus-tanggal&id=<?php echo $data['id']; ?>" onclick="return confirm('Anda yakin ingin menghapus tanggal <?php echo $data['tanggal']; ?>?');">
                   <i class="glyphicon glyphicon-trash"></i>
                 </a>
               <?php

@@ -1,6 +1,6 @@
 <?php
 // Panggil koneksi database
-require_once "../config/database.php";
+require_once "config/database.php";
 
 if (isset($_POST['simpan'])) {
 	$id			= mysqli_real_escape_string($db, trim($_POST['id']));
@@ -42,9 +42,9 @@ if (isset($_POST['simpan'])) {
 	// cek hasil query
 	if ($query) {
 		// jika berhasil tampilkan pesan berhasil insert data
-		header('location: index.php?alert=2');
+		header('location: ?page=tampil-data-absen&alert=2');
 	} else {
 		// jika gagal tampilkan pesan kesalahan
-		header('location: index.php?alert=1');
+		header('location: ?page=tampil-data-absen&alert=1');
 	}
 }

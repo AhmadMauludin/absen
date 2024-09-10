@@ -10,14 +10,14 @@ if (isset($_POST['cari'])) {
   <div class="col-md-12">
     <div class="page-header">
       <div>
-        <form class="form-inline" method="POST" action="index.php">
+        <form class="form-inline" method="POST" action="?page=tampil-data-hsp">
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon">
                 <b>Perizinan</b>
               </div>
               <div class="input-group-addon">
-                <a href="?page=tambah"><i class="glyphicon glyphicon-plus"></i></a>
+                <a href="?page=tambah-hsp"><i class="glyphicon glyphicon-plus"></i></a>
               </div>
 
               <input type="text" class="form-control" name="cari" placeholder="Nama / tanggal" autocomplete="off" value="<?php echo $cari; ?>">
@@ -77,7 +77,7 @@ if (isset($_POST['cari'])) {
                 <th>Perizinan</th>
                 <th>Status</th>
                 <th class='aksi'>
-                  <center>Aksi</center>
+                  Aksi
                 </th>
               </tr>
             </thead>
@@ -113,21 +113,25 @@ if (isset($_POST['cari'])) {
                       <td width='20' >$no</td>
                       <td width='75'>$data[tgm]</td>
                       <td width='50'>$data[wtm]</td>
-                      <td width='150'>$data[nama]</td>
-                      <td width='100'>$data[jenis]</td>
-                      <td width='100'>$data[stat]</td>
-                      <td width='100' class='aksi'>
+                      <td width='100'>$data[nama]</td>
+                      <td width='50'>$data[jenis]</td>
+                      <td width='75'>$data[stat]</td>
+                      <td width='150' class='aksi'>
                         <div class='aksi'>
 
-                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail&idhsp=$data[idhsp]'> <i class='glyphicon glyphicon-eye-open'></i></a>  
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail-hsp&idhsp=$data[idhsp]'> <i class='glyphicon glyphicon-eye-open'></i></a>  
 
-                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='../absen/form-tambah&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-ok'></i></a>
-                          
-                         <a data-toggle='tooltip' data-placement='top' title='Kirim' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=kirim&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-share'></i></a>  
+                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=ubah-hsp&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-edit'></i></a>
+
+                        <a data-toggle='tooltip' data-placement='top' title='Verifikasi' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=verifikasi-hsp&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-ok'></i></a>
+                       
+                        <a data-toggle='tooltip' data-placement='top' title='lapor' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=lapor-hsp&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-hand-up'></i></a>
+
+                        <a data-toggle='tooltip' data-placement='top' title='Kirim' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=kirim-hsp&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-share'></i></a>  
 
                           "; ?>
 
-                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="proses-hapus.php?idhsp=<?php echo $data['idhsp']; ?>" onclick="return confirm('Anda yakin ingin menghapus perizinan <?php echo $data['nama']; ?>?');"> <i class="glyphicon glyphicon-trash"></i></a>
+                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="?page=hapus-hsp&idhsp=<?php echo $data['idhsp']; ?>" onclick="return confirm('Anda yakin ingin menghapus perizinan <?php echo $data['nama']; ?>?');"> <i class="glyphicon glyphicon-trash"></i></a>
 
               <?php
                 echo "
