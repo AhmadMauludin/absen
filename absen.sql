@@ -2,7 +2,7 @@
 -- Database Backup --
 -- Ver. : 1.0.1
 -- Host : 127.0.0.1
--- Generating Time : Sep 08, 2024 at 20:20:42:PM
+-- Generating Time : Sep 12, 2024 at 12:59:07:PM
 
 
 CREATE TABLE `absen` (
@@ -19,16 +19,14 @@ CREATE TABLE `absen` (
   `alfa` int(11) NOT NULL,
   `tazir` varchar(11) NOT NULL,
   PRIMARY KEY (`idabsen`)
-) ENGINE=MyISAM AUTO_INCREMENT=20240905124410 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=20240908122210 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO absen VALUES
-("20240905124409","20240908","122202","1","1","1","1","1","5","0","0","Tidak"),
-("20240905124408","20240908","122201","1","0","1","0","1","3","1","1","Sudah"),
 ("20240905122201","20240905","122201","1","1","1","1","1","5","0","0","Belum"),
 ("20240905122202","20240905","122202","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905122203","20240905","122203","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905122204","20240905","122204","1","1","1","1","1","5","0","0","Tidak"),
-("20240905122205","20240905","122205","1","1","1","1","1","5","0","0","Tidak"),
+("20240905122205","20240905","122205","0","1","1","1","1","4","0","1","Belum"),
 ("20240905122206","20240905","122206","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905122207","20240905","122207","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905122208","20240905","122208","1","1","1","1","1","5","0","0","Tidak"),
@@ -121,10 +119,10 @@ INSERT INTO absen VALUES
 ("20240905123134","20240905","123134","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905123135","20240905","123135","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905123136","20240905","123136","1","1","1","1","1","5","0","0","Tidak"),
-("20240905123137","20240905","123137","1","1","1","1","1","5","0","0","Tidak");
-INSERT INTO absen VALUES
+("20240905123137","20240905","123137","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905123138","20240905","123138","1","1","1","1","1","5","0","0","Tidak"),
-("20240905123139","20240905","123139","1","1","1","1","1","5","0","0","Tidak"),
+("20240905123139","20240905","123139","1","1","1","1","1","5","0","0","Tidak");
+INSERT INTO absen VALUES
 ("20240905123140","20240905","123140","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905123141","20240905","123141","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905123142","20240905","123142","1","1","1","1","1","5","0","0","Tidak"),
@@ -189,7 +187,21 @@ INSERT INTO absen VALUES
 ("20240905124404","20240905","124404","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905124405","20240905","124405","1","1","1","1","1","5","0","0","Tidak"),
 ("20240905124406","20240905","124406","1","1","1","1","1","5","0","0","Tidak"),
-("20240905124407","20240905","124407","0","0","1","0","0","1","0","4","Tidak");
+("20240905124407","20240905","124407","0","0","1","0","0","1","0","4","Tidak"),
+("20240908122209","20240908","122201","0","1","0","1","0","2","0","3","Sudah");
+
+CREATE TABLE `absensi` (
+  `idabsensi` bigint(10) NOT NULL AUTO_INCREMENT,
+  `idptm` int(10) NOT NULL,
+  `nis` int(6) NOT NULL,
+  `khd` varchar(10) NOT NULL,
+  `ket` varchar(50) NOT NULL,
+  PRIMARY KEY (`idabsensi`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO absensi VALUES
+("9","2","122201","Hadir",""),
+("10","2","122202","Hadir","");
 
 CREATE TABLE `hsp` (
   `idhsp` int(10) NOT NULL AUTO_INCREMENT,
@@ -206,11 +218,40 @@ CREATE TABLE `hsp` (
   `tgl` date NOT NULL,
   `wtl` time NOT NULL,
   PRIMARY KEY (`idhsp`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO hsp VALUES
-("4","122238","Sakit","Mag","2024-09-06","15:56:00","1","Belum Selesai","2024-09-06","15:56:00","Belum Lapor","0000-00-00","00:00:00"),
-("5","122502","Pulang","ngaliput adu domba di rancakalong","2024-09-07","10:43:00","1","Sudah Selesai","2024-09-07","10:43:00","Sudah Lapor","2024-09-07","10:43:00");
+("14","122233","Sakit","Berobat","2024-09-11","15:20:00","1","Selesai","2024-09-13","03:30:00","Belum Lapor","2024-09-12","05:59:00"),
+("17","122206","Pulang","Nengok","2024-09-12","01:06:00","1","Selesai","2024-09-21","01:07:00","Sudah Lapor","2024-09-11","18:00:00");
+
+CREATE TABLE `jadwal` (
+  `idjadwal` int(5) NOT NULL AUTO_INCREMENT,
+  `nis` int(5) NOT NULL,
+  `hari` varchar(10) NOT NULL,
+  `jam_mulai` time NOT NULL,
+  `jam_selesai` time NOT NULL,
+  `kelas` varchar(15) NOT NULL,
+  `mapel` varchar(50) NOT NULL,
+  PRIMARY KEY (`idjadwal`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO jadwal VALUES
+("1","1","Senin","05:00:00","06:00:00","3C","Al-Quran"),
+("2","2","Selasa","08:00:00","10:00:00","3A","Nahwu");
+
+CREATE TABLE `ptm` (
+  `idptm` int(8) NOT NULL AUTO_INCREMENT,
+  `idjadwal` int(5) NOT NULL,
+  `tanggal` date NOT NULL,
+  `materi` text NOT NULL,
+  `metode` varchar(30) NOT NULL,
+  PRIMARY KEY (`idptm`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO ptm VALUES
+("1","1","2024-09-09","Alfatihah","Tatap muka"),
+("2","2","2024-09-10","Bab kalam","Tugas"),
+("3","1","2024-09-16","Membaca juz amma","Daring");
 
 CREATE TABLE `santri` (
   `nis` varchar(10) NOT NULL,
@@ -226,8 +267,8 @@ CREATE TABLE `santri` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 INSERT INTO santri VALUES
-("122201","Abdul Dava Maulana","Laki-laki","3B","Sumedang","6285175017991","Abu Bakar 1","9C","abduldava.png"),
-("122202","Adly Firman Efendi","Laki-laki","1","Sumedang","6285175017991","","",""),
+("122201","Abdul Dava Maulana","Laki-laki","3A","Sumedang","6285175017991","Abu Bakar 1","3A","abduldava.png"),
+("122202","Adly Firman Efendi","Laki-laki","3A","Sumedang","6285175017991","","3A",""),
 ("122203","Adrian Muhammad Azhar","Laki-laki","1","Sumedang","6285175017991","","",""),
 ("122204","Agus Ramdani Alfariji","Laki-laki","1","Sumedang","6285175017991","","",""),
 ("122205","Aldian Ahmad","Laki-laki","1","Sumedang","6285175017991","","",""),
@@ -389,9 +430,8 @@ INSERT INTO santri VALUES
 ("124402","Gumerlar Ramadhan Nugraha","Laki-laki","1","Sumedang","6285175017991","","",""),
 ("124403","Lupi Maulana","Laki-laki","1","Sumedang","6285175017991","","",""),
 ("124404","Muhammad Abdul Kholiq","Laki-laki","1","Sumedang","6285175017991","","",""),
-("124405","Muhammad Adzka Satria Pratama","Laki-laki","1","Sumedang","6285175017991","","",""),
 ("124406","Nandra Rizky Al Pauzan","Laki-laki","1","Sumedang","6285175017991","","",""),
-("124407","Zahran Fauzan Zamzami","Laki-laki","1","Sumedang","6285175017991","","","");
+("124407","Zahran Fauzan Zamzami","Laki-laki","1","Sumedang","6285175017991","Umar Bin Khottob 1","10","zahran.jpg");
 
 CREATE TABLE `staf` (
   `nis` int(11) NOT NULL AUTO_INCREMENT,
@@ -401,10 +441,11 @@ CREATE TABLE `staf` (
   `jabatan` varchar(20) NOT NULL,
   `foto` text NOT NULL,
   PRIMARY KEY (`nis`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO staf VALUES
-("1","Ahmad Mauludin","6289502918001","ahmadmaldin1799@gmail.com","sekretaris","ahmad.jpeg");
+("1","Ahmad Mauludin","6289502918001","ahmadmaldin1799@gmail.com","sekretaris","ahmad.jpeg"),
+("2","Ridwan Abdul Mugni","6285314026720","ridwanabdulmugni@gmail.com","Kepengasuhan","ridwan.jpg");
 
 CREATE TABLE `tanggal` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -412,7 +453,7 @@ CREATE TABLE `tanggal` (
   `hari` varchar(10) NOT NULL,
   `ket` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20240909 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=20240911 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO tanggal VALUES
 ("20240908","2024-09-08","Ahad","Hari ini"),
@@ -425,8 +466,9 @@ CREATE TABLE `user` (
   `level` varchar(30) NOT NULL,
   `nis` int(11) NOT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=122202 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO user VALUES
 ("1","maldin","maldin","admin","1"),
-("2","ahmad","ahmad","pengurus","2");
+("2","ridwan","ridwan","Pengurus","2"),
+("122201","abdul","abdul","santri","122201");
