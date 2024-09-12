@@ -3,7 +3,7 @@
       <div class="page-header">
         <h4>
           <i class="glyphicon glyphicon-edit"></i>
-          Ubah data perizinan
+          Verifikasi Perizinan
         </h4>
       </div> <!-- /.page-header -->
       <?php
@@ -20,101 +20,49 @@
           $ket            = $data['ket'];
           $tgm            = $data['tgm'];
           $wtm            = $data['wtm'];
-          $iduser       = $data['iduser'];
+          $iduser         = $data['iduser'];
           $stat           = $data['stat'];
           $tgs            = $data['tgs'];
           $wts            = $data['wts'];
           $lapor          = $data['lapor'];
           $tgl            = $data['tgl'];
           $wtl            = $data['wtl'];
-
-          $username       = $data['username'];
+          $username         = $data['username'];
         }
       }
       ?>
       <div class="panel panel-default">
+
+        <ul class="list-group">
+          <li class="list-group-item active">
+            <center><b>DETAIL DATA PERIZINAN</b></center>
+          </li>
+          <li class="list-group-item">Kode Perizinan : <?php echo $idhsp; ?></li>
+          <li class="list-group-item">NIS : <?php echo $nis; ?></li>
+          <li class="list-group-item">Nama : <?php echo $nama; ?></li>
+          <li class="list-group-item">Jenis Kelamin : <?php echo $jenis_kelamin; ?></li>
+          <li class="list-group-item">Kelas : <?php echo $kelas; ?></li>
+          <li class="list-group-item">Jenis : <?php echo $jenis; ?></li>
+          <li class="list-group-item">Keterangan : <?php echo $ket; ?>
+          <li class="list-group-item">Pemberi Izin : <?php echo $username; ?>
+          <li class="list-group-item">Tanggal Mulai : <?php echo $tgm; ?>
+          <li class="list-group-item">Waktu Mulai : <?php echo $wtm; ?>
+        </ul>
+
         <div class="panel-body">
           <form class="form-horizontal" method="POST" action="?page=perbaharui-hsp">
 
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Id HSP</label>
-              <div class="col-sm-1">
-                <input type="text" class="form-control" name="nis" value="<?php echo $idhsp; ?>" readonly>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Nama Santri</label>
-              <div class="col-sm-3">
-                <select class="form-control" name="nis" placeholder="Pilih" required>
-                  <option value="$nis"><?php echo $nama; ?></option>
-
-                  <?php
-                  $query1 = "SELECT * FROM santri";
-                  $result1 = mysqli_query($db, $query1);
-                  foreach ($result1 as $data1) {
-                  ?>
-
-                    <option value=" <?php echo $data1["nis"]; ?> "> <?php echo $data1["nama"]; ?> </option>
-
-                  <?php
-                  }
-                  ?>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Perizinan</label>
-              <div class="col-sm-2">
-                <select class="form-control" name="jenis" placeholder="Pilih Perizinan" required>
-                  <option value="$jenis"><?php echo $jenis; ?></option>
-                  <option value="Haid">Haid</option>
-                  <option value="Sakit">Sakit</option>
-                  <option value="Pulang">Pulang</option>
-                  <option value="Lainnya">Lainnya</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Rincian</label>
-              <div class="col-sm-2">
-                <textarea class="form-control" name="ket" rows="3" required><?php echo $ket; ?></textarea>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Tanggal Perizinan</label>
-              <div class="col-sm-2">
-                <div class="input-group">
-                  <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" name="tgm" value="<?php echo $tgm; ?>" autocomplete="off">
-                  <span class="input-group-addon">
-                    <i class="glyphicon glyphicon-calendar"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Waktu Perizinan</label>
-              <div class="col-sm-2">
-                <div class="input-group">
-                  <input type="time" class="form-control time-picker" name="wtm" value="<?php echo $wtm; ?>" autocomplete="off">
-                  <span class="input-group-addon">
-                    <i class="glyphicon glyphicon-time"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
+            <input type="hidden" name="idhsp" value="<?php echo $idhsp; ?>">
 
             <div class="form-group">
               <label class="col-sm-2 control-label">Status</label>
               <div class="col-sm-2">
-                <select class="form-control" name="stat" placeholder="Pilih Perizinan" required>
+                <select class="form-control" name="stat" placeholder="Pilih">
                   <option value="<?php echo $stat; ?>"><?php echo $stat; ?></option>
-                  <option value="Belum Selesai">Belum Selesai</option>
-                  <option value="Sudah Selesai">Selesai</option>
+                  <option value="Diizinkan">Diizinkan</option>
+                  <option value="Ditolak">Ditolak</option>
+                  <option value="Berlangsung">Berlangsung</option>
+                  <option value="Selesai">Selesai</option>
                 </select>
               </div>
             </div>
@@ -122,12 +70,7 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">Tanggal Selesai</label>
               <div class="col-sm-2">
-                <div class="input-group">
-                  <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgs" autocomplete="off" value="<?php echo $tgs; ?>" required>
-                  <span class="input-group-addon">
-                    <i class="glyphicon glyphicon-calendar"></i>
-                  </span>
-                </div>
+                <input type="date" name="tgs" class="form-control" value="<?php echo $tgs; ?>">
               </div>
             </div>
 
@@ -146,7 +89,7 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">Lapor</label>
               <div class="col-sm-2">
-                <select class="form-control" name="lapor" placeholder="Lapor" required>
+                <select class="form-control" name="lapor" placeholder="Lapor">
                   <option value="<?php echo $lapor; ?>"><?php echo $lapor; ?></option>
                   <option value="Belum Lapor">Belum Lapor</option>
                   <option value="Sudah Lapor">Sudah Lapor</option>
@@ -157,12 +100,7 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">Tanggal Lapor</label>
               <div class="col-sm-2">
-                <div class="input-group">
-                  <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl" autocomplete="off" value="<?php echo $tgl; ?>" required>
-                  <span class="input-group-addon">
-                    <i class="glyphicon glyphicon-calendar"></i>
-                  </span>
-                </div>
+                <input type="date" name="tgl" class="form-control" value="<?php echo $tgl; ?>">
               </div>
             </div>
 

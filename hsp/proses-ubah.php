@@ -1,4 +1,3 @@
-
 <?php
 // Panggil koneksi database
 require_once "config/database.php";
@@ -7,44 +6,22 @@ if (isset($_POST['simpan'])) {
 	if (isset($_POST['idhsp'])) {
 
 		$idhsp          = mysqli_real_escape_string($db, trim($_POST['idhsp']));
+		$stat       = $_POST['stat'];
 
-		$tanggalm       = $_POST['tgm'];
-		$tglm           = explode('-', $tanggalm);
-		$tgm = $tglm[2] . "-" . $tglm[1] . "-" . $tglm[0];
-
-		$tanggals       = $_POST['tgs'];
-		$tgls           = explode('-', $tanggals);
-		$tgs = $tgls[2] . "-" . $tgls[1] . "-" . $tgls[0];
-
-		$tanggall       = $_POST['tgl'];
-		$tgll           = explode('-', $tanggall);
-		$tgl = $tgll[2] . "-" . $tgll[1] . "-" . $tgll[0];
+		$tgm       	= $_POST['tgm'];
+		$tgs       	= $_POST['tgs'];
+		$tgl       	= $_POST['tgl'];
 
 		$wtm       	= $_POST['wtm'];
 		$wts       	= $_POST['wts'];
 		$wtl       	= $_POST['wtl'];
 
-		$nis       	= $_POST['nis'];
-		$jenis      = $_POST['jenis'];
-		$ket       	= mysqli_real_escape_string($db, trim($_POST['ket']));
-		$iduser     = mysqli_real_escape_string($db, trim($_POST['iduser']));
-		$stat       = $_POST['stat'];
+
 		$lapor      = $_POST['lapor'];
 
-		// perintah query untuk mengubah data pada tabel is_siswa
-		$query = mysqli_query($db, "UPDATE santri SET idhsp = '$idhsp',									
-													 jenis	= '$jenis',
-													 ket	= '$ket',
-													 tgm	= '$tgm',
-													 wtm	= '$wtm',
-													 iduser	= '$iduser',
-													 stat	= '$stat',
-													 tgs	= '$tgs',
-													 wts	= '$wts',
-													 lapor	= '$lapor',
-													 tgl	= '$tgl',
-													 wtl	= '$wtl')	
-											 WHERE	idhsp	= '$idhsp'");
+		// perintah query untuk mengubah data pada tabel
+		$query = mysqli_query($db, "UPDATE hsp SET stat = '$stat', tgs = '$tgs', wts = '$wts', lapor = '$lapor', tgl = '$tgl', wtl = '$wtl' WHERE idhsp = '$idhsp'");
+
 
 		// cek query
 		if ($query) {
@@ -56,4 +33,3 @@ if (isset($_POST['simpan'])) {
 		}
 	}
 }
-?>

@@ -1,4 +1,3 @@
-
 <?php
 // Panggil koneksi database
 require_once "config/database.php";
@@ -16,7 +15,7 @@ if (isset($_POST['simpan'])) {
 		$alfa	= 5 - ($hadir + $izin);
 		$tazir  = $_POST['tazir'];
 
-		// perintah query untuk mengubah data pada tabel is_siswa
+		// perintah query untuk mengubah data pada tabel 
 		$query = mysqli_query($db, "UPDATE absen SET s = '$s', d = '$d', a = '$a', m = '$m', i = '$i', hadir = '$hadir', izin = '$izin', alfa = '$alfa', tazir = '$tazir' WHERE idabsen = '$idabsen'");
 
 		// cek query
@@ -29,4 +28,3 @@ if (isset($_POST['simpan'])) {
 		}
 	}
 }
-?>

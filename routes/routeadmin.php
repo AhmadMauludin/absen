@@ -79,14 +79,29 @@ if (empty($_GET["page"])) {
     include "hsp/proses-hapus.php";
 } elseif ($_GET['page'] == 'ubah-hsp') {
     include "hsp/form-ubah.php";
-} elseif ($_GET['page'] == 'verifikasi-hsp') {
-    include "hsp/form-verifikasi.php";
-} elseif ($_GET['page'] == 'lapor-hsp') {
-    include "hsp/form-lapor.php";
 } elseif ($_GET['page'] == 'perbaharui-hsp') {
     include "hsp/proses-ubah.php";
 } elseif ($_GET['page'] == 'detail-hsp') {
     include "hsp/detail.php";
 } elseif ($_GET['page'] == 'kirim-hsp') {
     include "hsp/kirim.php";
+
+    // Route Absensi Ngaji & Sekolah
+
+} else if ($_GET['page'] == 'tampil-jadwal') {
+    include "absensi/tampil-jadwal.php";
+} else if ($_GET['page'] == 'tampil-ptm') {
+    include "absensi/tampil-ptm.php";
+} else if ($_GET['page'] == 'tambah-ptm') {
+    include "absensi/tambah-ptm.php";
+} else if ($_GET['page'] == 'simpan-ptm') {
+    include "absensi/simpan-ptm.php";
+} else if ($_GET['page'] == 'input-absensi') {
+    include "absensi/input-absensi.php";
+} else if ($_GET['page'] == 'simpan-absensi') {
+    include "absensi/simpan-absensi.php";
+} else if ($_GET['page'] == 'hapus-absensi') {
+    include "absensi/hapus-absensi.php";
+} else if ($_GET['page'] == 'tampil-absensi') {
+    include "absensi/tampil-absensi.php";
 }

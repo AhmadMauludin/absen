@@ -9,7 +9,7 @@
 
     <div class="panel panel-default">
       <div class="panel-body">
-        <form class="form-horizontal" method="POST" action="proses-simpan.php">
+        <form class="form-horizontal" method="POST" action="?page=simpan-hsp">
 
           <input type="hidden" name="iduser" value="<?php echo $_SESSION['iduser']; ?>">
 
@@ -83,9 +83,8 @@
           <div class="form-group">
             <label class="col-sm-2 control-label">Status</label>
             <div class="col-sm-2">
-              <select class="form-control" name="stat" placeholder="Pilih Perizinan" required>
-                <option value="Belum Selesai">Belum Selesai</option>
-                <option value="Sudah Selesai">Selesai</option>
+              <select class="form-control" name="stat" placeholder="Status Perizinan" required>
+                <option value="Menunggu Persetujuan">Menunggu Persetujuan</option>
               </select>
             </div>
           </div>
@@ -113,42 +112,6 @@
               </div>
             </div>
           </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label">Lapor</label>
-            <div class="col-sm-2">
-              <select class="form-control" name="lapor" placeholder="Pilih Jenis Perizinan" required>
-                <option value="Belum Lapor">Belum Lapor</option>
-                <option value="Sudah Lapor">Sudah Lapor</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label">Tanggal Lapor</label>
-            <div class="col-sm-2">
-              <div class="input-group">
-                <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl" autocomplete="off">
-                <span class="input-group-addon">
-                  <i class="glyphicon glyphicon-calendar"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label">Waktu Lapor</label>
-            <div class="col-sm-2">
-              <div class="input-group">
-                <input type="time" class="form-control time-picker" name="wtl" autocomplete="off">
-                <span class="input-group-addon">
-                  <i class="glyphicon glyphicon-time"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-
 
           <hr />
           <div class="form-group">

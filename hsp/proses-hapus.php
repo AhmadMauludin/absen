@@ -1,6 +1,6 @@
 <?php
 // Panggil koneksi database
-require_once "../config/database.php";
+require_once "config/database.php";
 
 if (isset($_GET['idhsp'])) {
 
@@ -12,9 +12,9 @@ if (isset($_GET['idhsp'])) {
 	// cek hasil query
 	if ($query) {
 		// jika berhasil tampilkan pesan berhasil delete data
-		header('location: index.php?alert=4');
+		header('location: ?page=tampil-data-hsp&alert=4');
 	} else {
 		// jika gagal tampilkan pesan kesalahan
-		header('location: index.php?alert=1');
+		header('location: ?page=tampil-data-hsp&alert=1');
 	}
 }

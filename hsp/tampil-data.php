@@ -77,7 +77,7 @@ if (isset($_POST['cari'])) {
                 <th>Perizinan</th>
                 <th>Status</th>
                 <th class='aksi'>
-                  Aksi
+                  <center>Aksi</center>
                 </th>
               </tr>
             </thead>
@@ -111,21 +111,17 @@ if (isset($_POST['cari'])) {
 
                 echo "  <tr>
                       <td width='20' >$no</td>
-                      <td width='75'>$data[tgm]</td>
-                      <td width='50'>$data[wtm]</td>
-                      <td width='100'>$data[nama]</td>
+                      <td width='50'>$data[tgm]</td>
+                      <td width='25'>$data[wtm]</td>
+                      <td width='150'>$data[nama]</td>
                       <td width='50'>$data[jenis]</td>
                       <td width='75'>$data[stat]</td>
-                      <td width='150' class='aksi'>
+                      <td width='100' class='aksi' align='center'>
                         <div class='aksi'>
 
-                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail-hsp&idhsp=$data[idhsp]'> <i class='glyphicon glyphicon-eye-open'></i></a>  
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=detail-hsp&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-eye-open'></i></a>  
 
-                        <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=ubah-hsp&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-edit'></i></a>
-
-                        <a data-toggle='tooltip' data-placement='top' title='Verifikasi' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=verifikasi-hsp&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-ok'></i></a>
-                       
-                        <a data-toggle='tooltip' data-placement='top' title='lapor' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=lapor-hsp&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-hand-up'></i></a>
+                        <a data-toggle='tooltip' data-placement='top' title='Verif/Lapor' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=ubah-hsp&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-ok'></i></a>
 
                         <a data-toggle='tooltip' data-placement='top' title='Kirim' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=kirim-hsp&idhsp=$data[idhsp]'><i class='glyphicon glyphicon-share'></i></a>  
 
