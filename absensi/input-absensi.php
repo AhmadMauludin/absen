@@ -103,7 +103,7 @@ if (isset($_GET['id'])) {
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <input type="submit" class="btn btn-info btn-submit" name="simpan" value="Simpan">
-                                <a href="?page=tampil-data-absen" class="btn btn-default btn-reset">Batal</a>
+                                <a href="?page=tampil-ptm" class="btn btn-default btn-reset">Batal</a>
                             </div>
                         </div>
                 </form>

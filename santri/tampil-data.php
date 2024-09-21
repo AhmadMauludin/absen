@@ -84,7 +84,7 @@ if (isset($_POST['cari'])) {
             <tbody>
               <?php
               /* Pagination */
-              $batas = 1000;
+              $batas = 20;
 
               if (isset($cari)) {
                 $jumlah_record = mysqli_query($db, "SELECT * FROM santri WHERE nis LIKE '%$cari%' OR nama LIKE '%$cari%'")
@@ -167,7 +167,7 @@ if (isset($_POST['cari'])) {
               <?php
               } else { ?>
                 <li>
-                  <a href="?hal=<?php echo $page - 1 ?>" aria-label="Previous">
+                  <a href="?page=tampil-data-santri&hal=<?php echo $page - 1 ?>" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
                 </li>
@@ -179,7 +179,7 @@ if (isset($_POST['cari'])) {
               <?php
               for ($x = 1; $x <= $halaman; $x++) { ?>
                 <li class="">
-                  <a href="?hal=<?php echo $x ?>"><?php echo $x ?></a>
+                  <a href="?page=tampil-data-santri&hal=<?php echo $x ?>"><?php echo $x ?></a>
                 </li>
               <?php
               }
@@ -196,7 +196,7 @@ if (isset($_POST['cari'])) {
               <?php
               } else { ?>
                 <li>
-                  <a href="?hal=<?php echo $page + 1 ?>" aria-label="Next">
+                  <a href="?page=tampil-data-santri&hal=<?php echo $page + 1 ?>" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                   </a>
                 </li>

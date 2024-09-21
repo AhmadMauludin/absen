@@ -6,6 +6,8 @@ if (isset($_POST['cari'])) {
 }
 ?>
 
+
+
 <div class="row">
     <div class="col-md-12">
         <div class="page-header">
@@ -45,24 +47,25 @@ if (isset($_POST['cari'])) {
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
               <span aria-hidden='true'>&times;</span>
             </button>
-            <strong><i class='glyphicon glyphicon-ok-circle'></i> Sukses!</strong> Data absen berhasil disimpan.
+            <strong><i class='glyphicon glyphicon-ok-circle'></i> Sukses!</strong> Data pertemuan berhasil disimpan.
           </div>";
         } elseif ($_GET['alert'] == 3) {
             echo "<div class='alert alert-success alert-dismissible' role='alert'>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
               <span aria-hidden='true'>&times;</span>
             </button>
-            <strong><i class='glyphicon glyphicon-ok-circle'></i> Sukses!</strong> Data absen berhasil diubah.
+            <strong><i class='glyphicon glyphicon-ok-circle'></i> Sukses!</strong> Data pertemuan berhasil diubah.
           </div>";
         } elseif ($_GET['alert'] == 4) {
             echo "<div class='alert alert-success alert-dismissible' role='alert'>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
               <span aria-hidden='true'>&times;</span>
             </button>
-            <strong><i class='glyphicon glyphicon-ok-circle'></i> Sukses!</strong> Data absen berhasil dihapus.
+            <strong><i class='glyphicon glyphicon-ok-circle'></i> Sukses!</strong> Data pertemuan berhasil dihapus.
           </div>";
         }
         ?>
+
 
         <div class="panel panel-default">
             <div class="panel-body">
@@ -85,14 +88,13 @@ if (isset($_POST['cari'])) {
                             <?php
                             /* Pagination */
                             $batas = 25;
-
                             if (isset($cari)) {
                                 $jumlah_record = mysqli_query($db, "SELECT ptm.*, jadwal.*, staf.* 
                                 FROM ptm JOIN jadwal ON jadwal.idjadwal = ptm.idjadwal JOIN staf ON staf.nis = jadwal.nis WHERE mapel LIKE '%$cari%' OR tanggal LIKE '%$cari%' OR nama LIKE '%$cari%'")
                                     or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
                             } else {
-                                $jumlah_record = mysqli_query($db, "SELECT ptm.*, jadwal.*, staf.* 
-                                FROM ptm JOIN jadwal ON jadwal.idjadwal = ptm.idjadwal JOIN staf ON staf.nis = jadwal.nis")
+                                $jumlah_record = mysqli_query($db, "SELECT ptm.*, jadwal.nis, staf.* 
+                                FROM ptm JOIN jadwal ON jadwal.idjadwal = ptm.idjadwal JOIN staf ON staf.nis = jadwal.nis ")
 
                                     or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
                             }
@@ -105,10 +107,10 @@ if (isset($_POST['cari'])) {
                             $no = 1;
                             if (isset($cari)) {
                                 $query = mysqli_query($db, "SELECT ptm.*, jadwal.*, staf.* 
-                                FROM ptm JOIN jadwal ON jadwal.idjadwal = ptm.idjadwal JOIN staf ON staf.nis = jadwal.nis WHERE mapel LIKE '%$cari%' OR tanggal LIKE '%$cari%' OR nama LIKE '%$cari%' ORDER BY tanggal DESC LIMIT $mulai, $batas") or die('Ada kesalahan pada query absen: ' . mysqli_error($db));
+                                FROM ptm JOIN jadwal ON jadwal.idjadwal = ptm.idjadwal JOIN staf ON staf.nis = jadwal.nis  WHERE mapel LIKE '%$cari%' OR tanggal LIKE '%$cari%' OR nama LIKE '%$cari%' ORDER BY tanggal DESC LIMIT $mulai, $batas") or die('Ada kesalahan pada query absen: ' . mysqli_error($db));
                             } else {
                                 $query = mysqli_query($db, "SELECT ptm.*, jadwal.*, staf.* 
-                                FROM ptm JOIN jadwal ON jadwal.idjadwal = ptm.idjadwal JOIN staf ON staf.nis = jadwal.nis ORDER BY tanggal DESC LIMIT $mulai, $batas") or die('Ada kesalahan pada query absen: ' . mysqli_error($db));
+                                FROM ptm JOIN jadwal ON jadwal.idjadwal = ptm.idjadwal JOIN staf ON staf.nis = jadwal.nis WHERE ORDER BY tanggal DESC LIMIT $mulai, $batas") or die('Ada kesalahan pada query absen: ' . mysqli_error($db));
                             }
 
                             while ($data = mysqli_fetch_assoc($query)) {
@@ -116,17 +118,20 @@ if (isset($_POST['cari'])) {
                       <td width='20'>$no</td>
                       <td width='20'>$data[idptm]</td>
                       <td width='50'>$data[hari], $data[tanggal]</td>
-                      <td width='125'><b>$data[mapel]</b> - $data[nama]</td>
+                      <td width='125'><b>$data[mapel]</b> - $data[nis] $data[nama]</td>
                       <td width='25'>$data[kelas]</td>
                       <td width='50'>$data[materi]</td>
                       <td width='50'>$data[metode]</td>
                       <td width='75'>
                         <div class=''>
+                        <a data-toggle='tooltip' data-placement='top' title='Absen' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=buat-absensi&id=$data[idptm]'>
+                        <i class='glyphicon glyphicon-plus'></i></a>
+                        
                         <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=tampil-absensi&id=$data[idptm]'>
                         <i class='glyphicon glyphicon-eye-open'></i></a>";
 
                             ?>
-                                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="?page=hapus-absensi&id=<?php echo $data['idptm']; ?>" onclick="return confirm('Anda yakin ingin menghapus absen ini?');">
+                                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="?page=hapus-ptm&id=<?php echo $data['idptm']; ?>" onclick="return confirm('Anda yakin ingin menghapus pertemuan ini?');">
                                     <i class="glyphicon glyphicon-trash"></i>
                                 </a>
                             <?php

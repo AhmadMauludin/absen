@@ -8,11 +8,13 @@ if (isset($_POST['simpan'])) {
     $tanggal   = $_POST['tanggal'];
     $metode    = $_POST['metode'];
     $materi    = mysqli_real_escape_string($db, trim($_POST['materi']));
+    $idptm     = $_POST['idptm'];
 
     // perintah query untuk menyimpan data ke tabel tanggal
-    $query = mysqli_query($db, "INSERT INTO ptm (idjadwal, tanggal, metode, materi)	VALUES('$idjadwal', '$tanggal',  '$metode', '$materi')");
+    $query = mysqli_query($db, "INSERT INTO ptm (idptm, idjadwal, tanggal, metode, materi)	VALUES('$idptm','$idjadwal', '$tanggal',  '$metode', '$materi')");
 
     // cek hasil query
+
     if ($query) {
         // jika berhasil tampilkan pesan berhasil insert data
         header('location: ?page=tampil-ptm&alert=2');

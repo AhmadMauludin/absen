@@ -81,6 +81,8 @@
                       <td width='50' class='center'>$data[khd]</td>
                       <td width='75' class='center'>$data[ket]</td>
                       <td width='100'class='center'>
+                      <a data-toggle='tooltip' data-placement='top' title='Edit' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=edit-absensi&id=$data[nis]&idptm=$idptm'><i class='glyphicon glyphicon-edit'></i> </a>
+                      
                       <a data-toggle='tooltip' data-placement='top' title='Hapus' class='btn btn-danger btn-sm' href='?page=hapus-absensi&id=$data[idabsensi]' onclick='return confirm('Anda yakin ingin menghapus absen ini?')'>
                   <i class='glyphicon glyphicon-trash'></i>
                 </a>
@@ -113,54 +115,7 @@
         </table>
     </div>
 </li>
-
 <br>
-<li class="list-group-item active">
-    <b>
-        <center>DATA SISWA
-        </center>
-    </b>
-</li>
-<li class="list-group-item">
-    <div class="table-responsive">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th class='center'>No</th>
-                    <th class='center'>NIS</th>
-                    <th class='center'>Nama</th>
-                    <th class='center'>Absen</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <?php
-                $no2 = 1;
-                $idptm = $idptm;
-                $kelas = $kelas;
-                $query2 = mysqli_query($db, "SELECT * FROM santri WHERE kelas = '$kelas' ")
-                    or die('Ada kesalahan pada query absensi: ' . mysqli_error($db));
-
-                while ($data2 = mysqli_fetch_assoc($query2)) {
-                    echo "  <tr>
-                      <td width='20' class='center'>$no2</td>
-                      <td width='50'class='center'>$data2[nis]</td>
-                      <td width='100'class='center'>$data2[nama] - $idptm</td>
-                      <td width='100'class='center'>
-                      <a data-toggle='tooltip' data-placement='top' title='Absensi' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=input-absensi&id=$data2[nis]&idptm=$idptm'><i class='glyphicon glyphicon-list-alt'></i> </a>
-                      </td>
-
-                      </tr>";
-                    $no++;
-                }
-                ?>
-        </table>
-
-
-</li>
-
-<br>
-
 <li class="list-group-item active">
     <center><b>REKAPITULASI</b></center>
 </li>

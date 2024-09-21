@@ -1,4 +1,15 @@
 <?php
+$query = mysqli_query($db, "SELECT * FROM ptm ORDER BY idptm DESC limit 1") or die('Query Error : ' . mysqli_error($db));
+while ($data    = mysqli_fetch_assoc($query)) {
+    $idptm     = $data['idptm'];
+}
+
+$idptmi = $idptm + 1;
+?>
+
+
+
+<?php
 $query = mysqli_query($db, "SELECT user.*, staf.* FROM user JOIN staf ON staf.nis = user.nis WHERE iduser='$_SESSION[iduser];'") or die('Query Error : ' . mysqli_error($db));
 while ($data    = mysqli_fetch_assoc($query)) {
     $iduser     = $data['iduser'];
@@ -36,9 +47,9 @@ while ($data    = mysqli_fetch_assoc($query)) {
                                 <option value="">Pilih jadwal</option>
 
                                 <?php
-                                $nis1 = $nis;
+                                $nis = $nis;
 
-                                $query1 = "SELECT jadwal.*, staf.* FROM jadwal JOIN staf ON staf.nis = jadwal.nis";
+                                $query1 = "SELECT jadwal.*, staf.* FROM jadwal JOIN staf ON staf.nis = jadwal.nis WHERE jadwal.nis=$nis";
                                 $result1 = mysqli_query($db, $query1);
                                 foreach ($result1 as $data1) {
                                 ?>
@@ -74,6 +85,7 @@ while ($data    = mysqli_fetch_assoc($query)) {
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Materi</label>
                         <div class="col-sm-3">
+                            <input type="text" name="idptm" class="form-control" value="<?php echo $idptmi; ?>">
                             <textarea class="form-control" name="materi" rows="3" required></textarea>
                         </div>
                     </div>

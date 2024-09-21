@@ -96,8 +96,12 @@ if (empty($_GET["page"])) {
     include "absensi/tambah-ptm.php";
 } else if ($_GET['page'] == 'simpan-ptm') {
     include "absensi/simpan-ptm.php";
+} else if ($_GET['page'] == 'hapus-ptm') {
+    include "absensi/hapus-ptm.php";
 } else if ($_GET['page'] == 'input-absensi') {
     include "absensi/input-absensi.php";
+} else if ($_GET['page'] == 'buat-absensi') {
+    include "absensi/buat-absensi.php";
 } else if ($_GET['page'] == 'simpan-absensi') {
     include "absensi/simpan-absensi.php";
 } else if ($_GET['page'] == 'hapus-absensi') {

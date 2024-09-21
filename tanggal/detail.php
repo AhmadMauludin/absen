@@ -148,7 +148,7 @@
     </ul>
 
     <div class="form-group">
-        <a href="index.php" class="btn btn-default btn-reset">Kembali</a>
+        <a href="?page=tampil-data-tanggal" class="btn btn-default btn-reset">Kembali</a>
     </div>
 </div>
 </form>
